@@ -91,3 +91,11 @@ def test_rank_respects_weights():
     assert by_growth[0]["id"] == "fast-small"
     assert by_volume[0]["id"] == "slow-big"
     assert stats.rank(rows[:1], {"growth": 1}) == []
+
+
+def test_short_daily_window_never_high_confidence():
+    share = noisy(100, n=60, sd=0.03, growth_per_year=2.0)
+    m = stats.describe(share * 20, share, "daily")
+    assert m["verdict"] == "growing"
+    assert m["confidence"]["level"] != "high"
+    assert any("less than a year" in r for r in m["confidence"]["reasons"])

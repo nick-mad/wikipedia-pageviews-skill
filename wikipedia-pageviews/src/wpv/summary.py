@@ -33,7 +33,8 @@ def render(a: dict, out_dir: str | None = None) -> str:
         f"{p['end'][:7] if gran == 'monthly' else p['end']} {gran} | human views, {p['access']}",
     ]
     if out_dir:
-        lines.append(f"saved: {out_dir}/analysis.json, {out_dir}/chart.png")
+        chart = f", {out_dir}/chart.png" if any(s.get("metrics") for s in a["series"]) else ""
+        lines.append(f"saved: {out_dir}/analysis.json{chart}")
     lines.append("")
     for s in a["series"]:
         if not s.get("metrics"):

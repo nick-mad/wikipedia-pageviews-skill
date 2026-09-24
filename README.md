@@ -24,6 +24,9 @@ wikipedia-pageviews/scripts/wpv resolve "intermittent fasting" --langs pl,cs
 wikipedia-pageviews/scripts/wpv analyze --topic "Intermittent fasting=Q1666254" --langs pl,cs
 wikipedia-pageviews/scripts/wpv report wpv-output/intermittent-fasting_pl-cs --headline ... --summary ... --recommendation ...
 
+# переглянути збережений приклад без мережі
+wikipedia-pageviews/scripts/wpv show wikipedia-pageviews/examples/4-chess-followup
+
 # тести (офлайн, на записаних відповідях API)
 cd wikipedia-pageviews && uv run pytest
 ```

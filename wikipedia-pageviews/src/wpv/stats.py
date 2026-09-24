@@ -194,9 +194,13 @@ def confidence(m: dict, granularity: str) -> dict:
         cap = "low"
         reasons.append(f"- low volume (median {med:,.0f} views/{_unit(granularity)}): noisy")
 
+    if cap is None and n < (12 if granularity == "monthly" else 365):
+        cap = "medium"
+        reasons.append("- less than a year of data: seasonality cannot be separated from "
+                       "trend, and %/yr is an extrapolation")
     level = "high" if score >= 4 else "medium" if score >= 2.5 else "low"
-    if cap == "low":
-        level = "low"
+    if cap == "low" or (cap == "medium" and level == "high"):
+        level = cap
     return {"level": level, "score": score, "max_score": 5, "reasons": reasons}
 
 

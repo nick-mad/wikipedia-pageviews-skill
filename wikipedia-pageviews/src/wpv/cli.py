@@ -201,6 +201,10 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     try:
         return args.func(args)
+    except FileNotFoundError as exc:
+        print(f"ERROR: {exc.filename} not found. Pass the directory printed by "
+              "`wpv analyze` (it contains analysis.json).", file=sys.stderr)
+        return 1
     except (ValueError, RuntimeError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

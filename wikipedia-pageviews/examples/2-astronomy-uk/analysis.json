@@ -1,0 +1,242 @@
+{
+ "schema": 1,
+ "generated": "2026-09-24T19:19:05",
+ "params": {
+  "topics": [
+   {
+    "label": "Астрономія",
+    "qids": [
+     "Q333"
+    ],
+    "titles": {}
+   }
+  ],
+  "langs": [
+   "uk"
+  ],
+  "start": "2024-09-01",
+  "end": "2026-08-31",
+  "granularity": "monthly",
+  "access": "all-access",
+  "agent": "user",
+  "include_redirects": true,
+  "weights": {
+   "growth": 0.5,
+   "volume": 0.3,
+   "trust": 0.2
+  }
+ },
+ "entities": {
+  "Q333": {
+   "label": "астрономія",
+   "description": "одна з найдавніших наук, що включає спостереження і пояснення подій, які відбуваються за межами Землі та її атмосфери",
+   "sitelinks": {
+    "uk": "Астрономія"
+   }
+  }
+ },
+ "timeline": [
+  "20240901",
+  "20241001",
+  "20241101",
+  "20241201",
+  "20250101",
+  "20250201",
+  "20250301",
+  "20250401",
+  "20250501",
+  "20250601",
+  "20250701",
+  "20250801",
+  "20250901",
+  "20251001",
+  "20251101",
+  "20251201",
+  "20260101",
+  "20260201",
+  "20260301",
+  "20260401",
+  "20260501",
+  "20260601",
+  "20260701",
+  "20260801"
+ ],
+ "series": [
+  {
+   "id": "Астрономія [uk]",
+   "topic": "Астрономія",
+   "lang": "uk",
+   "articles": [
+    {
+     "qid": "Q333",
+     "title": "Астрономія",
+     "url": "https://uk.wikipedia.org/wiki/Астрономія",
+     "redirects_counted": 1,
+     "redirect_views": 4,
+     "article_views": 23322,
+     "explicit": false
+    }
+   ],
+   "metrics": {
+    "n_points": 24,
+    "total_views": 23326,
+    "median_views": 611.0,
+    "median_per_million": 10.169277771795077,
+    "growth_pct_per_year": -50.0257519371307,
+    "growth_pct_per_year_despiked": -51.12736856244812,
+    "raw_growth_pct_per_year": -64.410316810216,
+    "recent_vs_prior_pct": -45.484045135690565,
+    "recent_vs_prior_pct_despiked": -47.51503984867283,
+    "raw_recent_vs_prior_pct": -59.6003370651258,
+    "comparison_window": 12,
+    "mk_p": 0.0005506396966610008,
+    "mk_p_uncorrected": 8.016707191548222e-05,
+    "autocorr_lag1": 0.158,
+    "spike_count": 1,
+    "spike_mask": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     true,
+     false,
+     false,
+     false
+    ],
+    "seasonal_peak_months": [
+     9
+    ],
+    "spike_share_pct": 1.1139900033888346,
+    "verdict": "declining",
+    "verdict_despiked": "declining",
+    "confidence": {
+     "level": "high",
+     "score": 4.5,
+     "max_score": 5,
+     "reasons": [
+      "+ long series (24 monthly points)",
+      "+ trend statistically significant (p<0.001)",
+      "+ trend, year-over-year and spike-free comparisons agree",
+      "+ result holds without the 1 spike(s)",
+      "~ modest volume (median 611 views/month)"
+     ]
+    }
+   },
+   "views": [
+    4687,
+    1776,
+    1746,
+    1634,
+    1558,
+    1296,
+    1068,
+    1019,
+    789,
+    361,
+    305,
+    375,
+    1642,
+    635,
+    557,
+    622,
+    449,
+    425,
+    410,
+    405,
+    600,
+    281,
+    324,
+    362
+   ],
+   "per_million": [
+    62.9049,
+    21.3939,
+    20.8266,
+    19.353,
+    16.5548,
+    15.8142,
+    13.4155,
+    14.124,
+    11.4281,
+    6.7285,
+    4.9028,
+    6.0678,
+    26.8052,
+    9.6147,
+    8.2964,
+    11.2077,
+    7.4249,
+    8.2341,
+    7.439,
+    7.5864,
+    10.7238,
+    5.8164,
+    6.1133,
+    7.1372
+   ],
+   "project_views": [
+    74509285,
+    83014264,
+    83835060,
+    84431475,
+    94111809,
+    81951788,
+    79609260,
+    72146878,
+    69040303,
+    53652676,
+    62209478,
+    61801817,
+    61256706,
+    66044662,
+    67137685,
+    55497356,
+    60471976,
+    51614348,
+    55114806,
+    53385280,
+    55950057,
+    48312008,
+    52999047,
+    50720483
+   ]
+  }
+ ],
+ "ranking": [],
+ "project_trend_pct_per_year": {
+  "uk": -25.5
+ },
+ "notes": [
+  "uk.wikipedia overall traffic trend: -25.5%/year (normalisation removes this)."
+ ],
+ "assumptions": [
+  "Wikipedia page views measure curiosity/attention, not willingness to pay.",
+  "Only human traffic counted (agent=user); known bots and automated traffic excluded.",
+  "Views of redirects to the article (old names, spelling variants) are added to the article.",
+  "Growth is measured on the article's share of all views of that language edition (views per million), so a general decline of Wikipedia traffic is not mistaken for falling interest in the topic.",
+  "One Wikidata item = the same concept in every language, so languages are compared on equivalent articles."
+ ],
+ "limitations": [
+  "Automated-traffic filtering is imperfect; residual bot traffic can create false spikes.",
+  "Traffic that moves to search snippets, AI answers or apps is invisible here.",
+  "Language edition != country: e.g. English Wikipedia is read worldwide.",
+  "A single article is a proxy for a topic; related articles are not included unless added explicitly.",
+  "Articles created or split during the period show artificial growth."
+ ]
+}

@@ -68,7 +68,7 @@ verdict with spikes replaced by the trend value.
 
 | criterion | +1 | +0.5 | caps at low |
 |---|---|---|---|
-| series length | ≥24 months (≥90 days) | 12–23 months | <12 months (<28 days) |
+| series length | ≥24 months (≥90 days) | 12–23 months | <12 months (<28 days); under a year of daily data caps at medium |
 | trend test agrees with verdict | p < 0.05 (or flat and not significant) | 0.05 ≤ p < 0.10 | verdict "unclear" |
 | trend, YoY and spike-free YoY point the same way | yes | – | – |
 | robust to spikes | spikes < 20 % of views and verdict unchanged without them | – | – |
