@@ -77,7 +77,7 @@ def extract_numbers(text: str) -> list[tuple[str, list[float]]]:
 
 def known_numbers(a: dict) -> set[float]:
     """Every number a report may legitimately mention."""
-    vals: set[float] = set(range(0, 13))
+    vals: set[float] = set(range(0, 13)) | {0.05, 0.01, 0.1, 0.001}  # + usual p thresholds
     p = a["params"]
     for d in (p["start"], p["end"]):
         vals.update({int(d[:4]), int(d[5:7])})
@@ -87,7 +87,8 @@ def known_numbers(a: dict) -> set[float]:
         if isinstance(x, bool):
             return
         if isinstance(x, (int, float)):
-            vals.add(float(x))
+            # also as printed by the summary (1 decimal), since people round that
+            vals.update({float(x), round(float(x), 1)})
         elif isinstance(x, dict):
             for k, v in x.items():
                 if k not in ("views", "per_million", "project_views", "spike_mask"):
@@ -100,9 +101,17 @@ def known_numbers(a: dict) -> set[float]:
                 vals.update(vs)
 
     walk({k: a[k] for k in ("series", "ranking", "notes", "params")})
-    # derived numbers people naturally quote: period length, counts
+    # derived numbers people naturally quote: period length, counts, weights in %
     vals.add(len(a["timeline"]))
     vals.add(len(p["langs"]))
+    vals.update(w * 100 for w in p["weights"].values())
+    # pairwise comparisons of audience size ("2.5x", "46% more"), so correct
+    # derived statements pass while miscalculated ones are still caught
+    meds = [s["metrics"]["median_views"] for s in a["series"] if s.get("metrics")]
+    for x in meds:
+        for y in meds:
+            if x > y > 0:
+                vals.update({x / y, (x / y - 1) * 100, (1 - y / x) * 100})
     for s in a["series"]:
         if s.get("metrics"):
             m = s["metrics"]
@@ -128,7 +137,11 @@ def _matches(v: float, known: set[float]) -> bool:
     return any(_is_rounding_of(v, abs(k)) for k in known)
 
 
+_NOT_PROSE = re.compile(r"`[^`]*`|https?://\S+|(?:[\w.~-]*/)+[\w.~-]+")
+
+
 def unverified(text: str, known: set[float]) -> list[str]:
+    text = _NOT_PROSE.sub(" ", text)  # file paths, URLs and code are not claims
     return [tok for tok, vals in extract_numbers(text)
             if not any(_matches(v, known) for v in vals)]
 
@@ -170,7 +183,7 @@ def build_pdf(a: dict, out_dir: str, pdf_path: str, headline: str, summary: str,
     }
 
     chart_path = os.path.join(out_dir, f"chart_{label_lang}.png")
-    charts.plot(a, chart_path, label_lang, size=(11, 3.7))
+    charts.plot(a, chart_path, label_lang, size=(11, 4.2))
 
     period = (f"{p['start'][:7]} – {p['end'][:7]}" if gran == "monthly"
               else f"{p['start']} – {p['end']}")
@@ -223,7 +236,7 @@ def build_pdf(a: dict, out_dir: str, pdf_path: str, headline: str, summary: str,
         Spacer(1, 5),
         Paragraph(escape(summary), st["body"]),
         Spacer(1, 4),
-        Image(chart_path, width=182 * mm, height=182 * mm * 3.7 / 11),
+        Image(chart_path, width=182 * mm, height=182 * mm * 4.2 / 11),
         table,
         Spacer(1, 2),
         Paragraph(escape(L["footnote"].format(win=win, unit=unit)), st["small"]),

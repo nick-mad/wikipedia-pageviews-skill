@@ -41,8 +41,8 @@ def commands(run_dir: Path) -> tuple[list[str], list[str], Counter]:
 
 
 def analyses(out: Path) -> list[dict]:
-    files = sorted(out.glob("*analysis.json"), key=lambda p: p.stat().st_mtime)
-    return [json.loads(f.read_text()) for f in files]
+    docs = [json.loads(f.read_text()) for f in out.glob("*analysis.json")]
+    return sorted(docs, key=lambda a: a["generated"])  # last = most recent analysis
 
 
 def pdf_pages(path: Path) -> int:
@@ -70,7 +70,8 @@ def grade(run_dir: Path, ev: dict) -> dict:
     def check(aid: str):
         if aid == "used_cli":
             hits = [c for c in bash if re.search(r"wpv\S*\s+analyze", c)]
-            return bool(hits), (hits[0][:160] if hits else "no `wpv analyze` call")
+            shown = re.sub(r"\S*/scripts/wpv", "wpv", hits[0])[:160] if hits else ""
+            return bool(hits), shown or "no `wpv analyze` call"
         if aid == "no_own_api_code":
             hits = [c for c in bash + written if API_HOSTS.search(c)]
             return not hits, (f"{len(hits)} direct API call(s)/scripts, e.g. {hits[0][:140]}"
@@ -127,7 +128,8 @@ def grade(run_dir: Path, ev: dict) -> dict:
             return bool(m), m.group(0).strip() if m else "no ordered recommendation"
         if aid == "caveat_not_purchase_intent":
             m = re.search(r"willingness to pay|purchase|pay for|paying|revenue|monetiz|"
-                          r"платити|купівел|платоспроможн", low)
+                          r"views? (≠|!=|is not|are not|aren't|don't equal)|not the same as|"
+                          r"market (interest|demand)|платити|купівел|платоспроможн|≠ попит", low)
             return bool(m), m.group(0) if m else "no views-vs-payment caveat"
         raise KeyError(aid)
 

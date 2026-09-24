@@ -1,0 +1,587 @@
+{
+  "metadata": {
+    "skill_name": "wikipedia-pageviews",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-09-24T16:17:54Z",
+    "evals_run": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.857,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 40.4,
+        "tokens": 169636,
+        "tool_calls": 6,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": true,
+          "evidence": "<workspace>/iteration-1/eval-1-fasting-pl-vs-cs/with_skill/run-1/s"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": true,
+          "evidence": "all numbers traceable"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": true,
+          "evidence": "\u0432\u043f\u0435\u0432\u043d\u0435\u043d"
+        },
+        {
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline",
+          "passed": false,
+          "evidence": "no mention of normalisation / overall traffic"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer says Polish Wikipedia has no dedicated intermittent fasting article",
+          "passed": true,
+          "evidence": "\u043f\u043e\u043b\u044c\u0441\u044c\u043a\u0456\u0439 wikipedia \u043d\u0435\u043c\u0430\u0454"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 28.9,
+        "tokens": 93646,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": true,
+          "evidence": "<workspace>/iteration-1/eval-2-astronomy-uk-trust/with_skill/run-1"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": true,
+          "evidence": "all numbers traceable"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": true,
+          "evidence": "\u043d\u0430\u0434\u0456\u0439\u043d"
+        },
+        {
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline",
+          "passed": true,
+          "evidence": "\u0447\u0430\u0441\u0442\u043a"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer backs the trust question with a statistical signal (p-value / significance)",
+          "passed": true,
+          "evidence": "p<0"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 41.0,
+        "tokens": 122924,
+        "tool_calls": 4,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": true,
+          "evidence": "<workspace>/iteration-1/eval-3-english-learning-report/with_skill/"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": true,
+          "evidence": "all numbers traceable"
+        },
+        {
+          "text": "A one-page PDF report was produced",
+          "passed": true,
+          "evidence": "{\"wpv-output__english-language_uk-pl-tr-vi-id__report.pdf\": 1}"
+        },
+        {
+          "text": "Analysis covers uk, pl, tr, vi and id",
+          "passed": true,
+          "evidence": "final analysis langs: ['id', 'pl', 'tr', 'uk', 'vi']"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer names which audiences to research next, in order",
+          "passed": true,
+          "evidence": "\u043f\u0440\u0456\u043e\u0440\u0438\u0442\u0435\u0442"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 42.1,
+        "tokens": 146917,
+        "tool_calls": 4,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": true,
+          "evidence": "<workspace>/iteration-1/eval-4-chess-followup-weights/with_skill/r"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": true,
+          "evidence": "all numbers traceable"
+        },
+        {
+          "text": "Final analysis covers de, fr, es and it",
+          "passed": true,
+          "evidence": "final analysis langs: ['de', 'es', 'fr', 'it']"
+        },
+        {
+          "text": "Follow-up used --weights with volume weighted above growth",
+          "passed": true,
+          "evidence": "--weights growth=0.1,volume=0.8,trust=0.1"
+        },
+        {
+          "text": "Final answer is in English",
+          "passed": true,
+          "evidence": "expected en: ok"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 34.3,
+        "tokens": 119163,
+        "tool_calls": 4,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": true,
+          "evidence": "<workspace>/iteration-1/eval-5-meditation-ja-vs-ko/with_skill/run-"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": true,
+          "evidence": "all numbers traceable"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": true,
+          "evidence": "trust"
+        },
+        {
+          "text": "Analysis covers ja and ko",
+          "passed": true,
+          "evidence": "final analysis langs: ['ja', 'ko']"
+        },
+        {
+          "text": "Final answer is in English",
+          "passed": true,
+          "evidence": "expected en: ok"
+        },
+        {
+          "text": "Answer notes that views are not willingness to pay / purchase intent",
+          "passed": true,
+          "evidence": "not the same as"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.286,
+        "passed": 2,
+        "failed": 5,
+        "total": 7,
+        "time_seconds": 15.3,
+        "tokens": 43355,
+        "tool_calls": 3,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": false,
+          "evidence": "no `wpv analyze` call"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": false,
+          "evidence": "no analysis.json produced; numbers cannot be traced to data"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": false,
+          "evidence": "no confidence statement"
+        },
+        {
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline",
+          "passed": false,
+          "evidence": "no mention of normalisation / overall traffic"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer says Polish Wikipedia has no dedicated intermittent fasting article",
+          "passed": false,
+          "evidence": "does not say the pl article is missing"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.286,
+        "passed": 2,
+        "failed": 5,
+        "total": 7,
+        "time_seconds": 13.9,
+        "tokens": 21648,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": false,
+          "evidence": "no `wpv analyze` call"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": false,
+          "evidence": "no analysis.json produced; numbers cannot be traced to data"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": false,
+          "evidence": "no confidence statement"
+        },
+        {
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline",
+          "passed": false,
+          "evidence": "no mention of normalisation / overall traffic"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer backs the trust question with a statistical signal (p-value / significance)",
+          "passed": false,
+          "evidence": "no statistical backing"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.286,
+        "passed": 2,
+        "failed": 5,
+        "total": 7,
+        "time_seconds": 367.2,
+        "tokens": 43993,
+        "tool_calls": 45,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": false,
+          "evidence": "no `wpv analyze` call"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": false,
+          "evidence": "no analysis.json produced; numbers cannot be traced to data"
+        },
+        {
+          "text": "A one-page PDF report was produced",
+          "passed": false,
+          "evidence": "no PDF produced"
+        },
+        {
+          "text": "Analysis covers uk, pl, tr, vi and id",
+          "passed": false,
+          "evidence": "no analysis.json"
+        },
+        {
+          "text": "Final answer is in Ukrainian",
+          "passed": true,
+          "evidence": "expected uk: ok"
+        },
+        {
+          "text": "Answer names which audiences to research next, in order",
+          "passed": false,
+          "evidence": "no ordered recommendation"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 4,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.167,
+        "passed": 1,
+        "failed": 5,
+        "total": 6,
+        "time_seconds": 44.2,
+        "tokens": 192057,
+        "tool_calls": 12,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": false,
+          "evidence": "no `wpv analyze` call"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": false,
+          "evidence": "1 direct API call(s)/scripts, e.g. WebFetch https://stats.wikimedia.org/"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": false,
+          "evidence": "no analysis.json produced; numbers cannot be traced to data"
+        },
+        {
+          "text": "Final analysis covers de, fr, es and it",
+          "passed": false,
+          "evidence": "no analysis.json"
+        },
+        {
+          "text": "Follow-up used --weights with volume weighted above growth",
+          "passed": false,
+          "evidence": "no --weights used"
+        },
+        {
+          "text": "Final answer is in English",
+          "passed": true,
+          "evidence": "expected en: ok"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 5,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.429,
+        "passed": 3,
+        "failed": 4,
+        "total": 7,
+        "time_seconds": 9.0,
+        "tokens": 42481,
+        "tool_calls": 1,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Agent ran the skill's wpv analyze command",
+          "passed": false,
+          "evidence": "no `wpv analyze` call"
+        },
+        {
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs",
+          "passed": true,
+          "evidence": "no direct Wikimedia API calls"
+        },
+        {
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)",
+          "passed": false,
+          "evidence": "no analysis.json produced; numbers cannot be traced to data"
+        },
+        {
+          "text": "Answer states how trustworthy the conclusion is (confidence level)",
+          "passed": true,
+          "evidence": "reliab"
+        },
+        {
+          "text": "Analysis covers ja and ko",
+          "passed": false,
+          "evidence": "no analysis.json"
+        },
+        {
+          "text": "Final answer is in English",
+          "passed": true,
+          "evidence": "expected en: ok"
+        },
+        {
+          "text": "Answer notes that views are not willingness to pay / purchase intent",
+          "passed": false,
+          "evidence": "no views-vs-payment caveat"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9714,
+        "stddev": 0.064,
+        "min": 0.857,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 37.34,
+        "stddev": 5.6101,
+        "min": 28.9,
+        "max": 42.1
+      },
+      "tokens": {
+        "mean": 130457.2,
+        "stddev": 28919.18,
+        "min": 93646,
+        "max": 169636
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.2908,
+        "stddev": 0.0929,
+        "min": 0.167,
+        "max": 0.429
+      },
+      "time_seconds": {
+        "mean": 89.92,
+        "stddev": 155.6195,
+        "min": 9.0,
+        "max": 367.2
+      },
+      "tokens": {
+        "mean": 68706.8,
+        "stddev": 69590.015,
+        "min": 21648,
+        "max": 192057
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.68",
+      "time_seconds": "-52.6",
+      "tokens": "+61750"
+    }
+  },
+  "notes": []
+}

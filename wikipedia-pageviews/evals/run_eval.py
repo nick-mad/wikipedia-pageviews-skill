@@ -22,11 +22,11 @@ import json
 import shutil
 import subprocess
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 SKILL_DIR = Path(__file__).resolve().parent.parent
-TOOLS = "Bash Read Write Edit Glob Grep Skill WebFetch"
+TOOLS = "Bash Read Write Edit Glob Grep Skill WebFetch WebSearch"
 
 
 def claude(prompt: str, cwd: Path, model: str, resume: str | None) -> list[dict]:
@@ -66,9 +66,9 @@ def to_markdown(turns: list[tuple[str, list[dict]]]) -> str:
     return "\n".join(out)
 
 
-def run_one(ws: Path, iteration: int, ev: dict, config: str, model: str) -> str:
+def run_one(ws: Path, iteration: int, ev: dict, config: str, model: str, run: int = 1) -> str:
     eval_dir = ws / f"iteration-{iteration}" / f"eval-{ev['id']}-{ev['name']}"
-    run_dir = eval_dir / config / "run-1"
+    run_dir = eval_dir / config / f"run-{run}"
     if run_dir.exists():
         shutil.rmtree(run_dir)
     sandbox = run_dir / "sandbox"
@@ -111,12 +111,12 @@ def run_one(ws: Path, iteration: int, ev: dict, config: str, model: str) -> str:
     for f in sandbox.rglob("*"):
         if f.is_file() and f.suffix in (".pdf", ".png", ".json") and ".claude" not in f.parts:
             dest = run_dir / "outputs" / f.relative_to(sandbox).as_posix().replace("/", "__")
-            shutil.copy(f, dest)
+            shutil.copy2(f, dest)
     (run_dir / "timing.json").write_text(json.dumps({
         "total_tokens": tokens, "duration_ms": int(elapsed * 1000),
         "total_duration_seconds": round(elapsed, 1), "cost_usd": round(cost, 4),
         "model": model, "turns": len(turns)}, indent=2))
-    return f"{eval_dir.name}/{config}: {elapsed:.0f}s, {tokens} tokens, ${cost:.3f}"
+    return f"{eval_dir.name}/{config}/run-{run}: {elapsed:.0f}s, {tokens} tokens, ${cost:.3f}"
 
 
 def main() -> None:
@@ -127,17 +127,20 @@ def main() -> None:
     ap.add_argument("--configs", default="with_skill,without_skill")
     ap.add_argument("--model", default="claude-haiku-4-5-20251001")
     ap.add_argument("--parallel", type=int, default=4)
+    ap.add_argument("--runs", type=int, default=1, help="repetitions per eval x config")
     args = ap.parse_args()
 
     evals = json.loads((SKILL_DIR / "evals" / "evals.json").read_text())["evals"]
     if args.evals:
         wanted = {int(x) for x in args.evals.split(",")}
         evals = [e for e in evals if e["id"] in wanted]
-    jobs = [(e, c) for e in evals for c in args.configs.split(",")]
+    jobs = [(e, c, r) for e in evals for c in args.configs.split(",")
+            for r in range(1, args.runs + 1)]
     with ThreadPoolExecutor(args.parallel) as pool:
-        for line in pool.map(lambda j: run_one(args.workspace, args.iteration, j[0], j[1],
-                                               args.model), jobs):
-            print(line, flush=True)
+        futures = [pool.submit(run_one, args.workspace, args.iteration, e, c, args.model, r)
+                   for e, c, r in jobs]
+        for f in as_completed(futures):
+            print(f.result(), flush=True)
 
 
 if __name__ == "__main__":

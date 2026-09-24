@@ -91,3 +91,15 @@ def test_rounded_figures_are_accepted():
     ok = "29,778 or 29 800 or 30K views; -4.7% or -5%; p=0.03"
     assert report.unverified(ok, known) == []
     assert report.unverified("31,000 views, -6%", known) == ["31,000", "-6"]
+
+
+def test_correct_derived_comparisons_pass_wrong_ones_fail(offline_client):
+    a = build(offline_client)
+    known = report.known_numbers(a)
+    pl, cs = (s["metrics"]["median_views"] for s in a["series"])
+    hi, lo = max(pl, cs), min(pl, cs)
+    right = f"{(hi / lo - 1) * 100:.0f}% more views"
+    wrong = "88% more views"  # not derivable from this data
+    assert report.unverified(right, known) == []
+    assert report.unverified(wrong, known) != []
+    assert report.unverified("see `/tmp/x-144b-4710/report.pdf`", known) == []

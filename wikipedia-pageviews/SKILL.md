@@ -33,8 +33,11 @@ DISAMBIGUATION. The output lists which requested languages have an article.
   own: nobody has written about the topic in that language. To still measure
   something, search that language directly
   (`wpv resolve "<local words>" --search-lang pl --langs pl`). If a close article
-  exists, add it as an explicit stand-in: `--topic "Label=Q1666254,pl:Głodówka lecznicza"`.
-  Tell the user that it covers a related concept, not the same one.
+  exists, add it to the same topic as an explicit stand-in:
+  `--topic "Label=Q1666254,pl:Głodówka lecznicza"`. The tool then marks it EXPLICIT
+  and lowers its confidence. Don't analyse a broader concept as a separate topic and
+  compare it as if it were the same thing. You have not read the articles, so don't
+  claim what they contain (e.g. "the topic is covered inside article X").
 - **Broad topics** (a school subject, a field): one article is a thin proxy. You can
   analyse 2–4 core articles as separate topics (e.g. Astronomy, Solar System,
   Black hole), or sum them into one topic with `Label=Q1,Q2,Q3`.
@@ -76,10 +79,18 @@ Base every claim on the printed summary. For each series it gives:
 A good answer:
 1. Starts with the direct answer: growing or not, and which language ranks first.
 2. Gives the key numbers exactly as printed (trend %/yr, p-value, median views).
-3. States confidence and the main reasons for it, including warnings from `why`.
-4. Names the caveats that matter here: stand-in articles, missing languages, low
+   Copy numbers; don't compute new ones. Ratios, differences and "X% more than Y"
+   are where small arithmetic slips creep in. To compare, put both printed figures
+   side by side. HIGHLIGHTS already names the largest audience and the best and
+   worst trends.
+3. Includes one sentence on the measure itself: the trend is the article's share of
+   all views of that Wikipedia, and overall traffic of that Wikipedia changed by
+   X%/yr (from NOTES). Without it, readers mistake the site-wide decline for lost
+   interest in the topic.
+4. States confidence and the main reasons for it, including warnings from `why`.
+5. Names the caveats that matter here: stand-in articles, missing languages, low
    volume, spikes, and that language ≠ country and views ≠ willingness to pay.
-5. Suggests a next check (related articles, another period, other languages).
+6. Suggests a next check (related articles, another period, other languages).
 
 Keep it short. Founders want the decision, the evidence and the risk.
 
@@ -93,7 +104,8 @@ wpv report wpv-output/<slug> --label-lang uk \
 
 The PDF fills in the chart, the metrics table and the caveats from `analysis.json`.
 You write only the prose, in the user's language. `--label-lang uk` gives Ukrainian
-fixed labels; use `en` for other languages. Limits: headline ≤120 characters,
+fixed labels; use `en` for other languages. The PDF font has no Chinese/Japanese/Korean
+glyphs, so for those users write the report text in English. Limits: headline ≤120 characters,
 summary ≤900, recommendation ≤600, at most 4 next steps.
 
 Every number in your text must come from the summary; rounding is fine. If you
