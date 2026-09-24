@@ -65,6 +65,22 @@ def render(a: dict, out_dir: str | None = None) -> str:
             "  why: " + "; ".join(c["reasons"]),
             "",
         ]
+    measured = [s for s in a["series"] if s.get("metrics")]
+    if len(measured) > 1:
+        def best(key, label, fmt):
+            s = max(measured, key=lambda x: x["metrics"][key])
+            return f"{label}: {s['id']} ({fmt(s['metrics'][key])})"
+        lines.append("HIGHLIGHTS (facts to quote; do not infer them yourself):")
+        lines.append("  " + best("median_views", "largest audience",
+                                 lambda v: f"median {v:,.0f} views/{unit}"))
+        lines.append("  " + best("growth_pct_per_year", "best share trend",
+                                 lambda v: f"{fmt_pct(v)}/yr"))
+        worst = min(measured, key=lambda x: x["metrics"]["growth_pct_per_year"])
+        lines.append(f"  worst share trend: {worst['id']} "
+                     f"({fmt_pct(worst['metrics']['growth_pct_per_year'])}/yr)")
+        growing = [s["id"] for s in measured if s["metrics"]["verdict"] == "growing"]
+        lines.append("  growing: " + (", ".join(growing) if growing else "none"))
+        lines.append("")
     if a["ranking"]:
         w = p["weights"]
         lines.append("RANKING (relative to this set; weights "

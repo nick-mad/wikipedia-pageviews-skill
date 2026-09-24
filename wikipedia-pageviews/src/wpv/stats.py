@@ -2,8 +2,8 @@
 
 Design choices (see references/methodology.md for the reasoning):
 - Mann-Kendall test + Sen's slope: rank-based, robust to single news spikes.
-- Lag-1 autocorrelation correction of the MK variance: monthly pageviews are
-  autocorrelated, and the plain test would overstate significance.
+- Yue & Wang lag-1 autocorrelation correction of the MK variance: monthly
+  pageviews are autocorrelated, and the plain test would overstate significance.
 - Spikes: robust z-score (median/MAD) of residuals around the Sen line, in log
   space, so a 3x jump counts the same for a small and a large wiki.
 - Confidence: a transparent points system; every point comes with a reason
@@ -38,18 +38,16 @@ def mann_kendall(y: np.ndarray, slope: float | None = None) -> dict:
     z_raw = z_of(var)
     p_raw = math.erfc(abs(z_raw) / math.sqrt(2))
 
-    # Yue & Wang style correction: detrend, estimate lag-1 autocorrelation,
-    # inflate the variance by the AR(1) effective-sample-size factor.
+    # Yue & Wang (2004) correction with lag-1 autocorrelation of the Sen-detrended
+    # series (same formula as pymannkendall.yue_wang_modification_test(lag=1)).
+    # Floored at 1: negative autocorrelation never makes the test less strict.
     if slope is None:
         slope, _ = sen_slope(y)
-    resid = y - slope * np.arange(n)
+    resid = y - slope * np.arange(1, n + 1)
     resid = resid - resid.mean()
     denom = float((resid ** 2).sum())
     r1 = float((resid[:-1] * resid[1:]).sum() / denom) if denom > 0 else 0.0
-    factor = 1.0
-    if r1 > 1.96 / math.sqrt(n):
-        k = np.arange(1, n)
-        factor = 1 + 2 * float(((1 - k / n) * r1 ** k).sum())
+    factor = max(1.0, 1 + 2 * (1 - 1 / n) * r1)
     z = z_of(var * factor)
     p = math.erfc(abs(z) / math.sqrt(2))
     return {"s": s, "z": round(z, 3), "p": p, "p_raw": p_raw,

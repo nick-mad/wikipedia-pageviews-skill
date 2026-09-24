@@ -1,0 +1,217 @@
+{
+  "skill_name": "wikipedia-pageviews",
+  "evals": [
+    {
+      "id": 1,
+      "name": "fasting-pl-vs-cs",
+      "prompt": "Порівняй зростання інтересу до інтервального голодування в польськомовній та чеськомовній Wikipedia за останні два роки.",
+      "expected_output": "Notices that Polish Wikipedia has no article linked to the intermittent fasting Wikidata item and says so (optionally measures a clearly labelled stand-in). Reports the Czech trend with numbers from the tool, confidence, and the normalisation caveat. Answers in Ukrainian.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "used_cli",
+          "text": "Agent ran the skill's wpv analyze command"
+        },
+        {
+          "id": "no_own_api_code",
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs"
+        },
+        {
+          "id": "numbers_grounded",
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)"
+        },
+        {
+          "id": "states_confidence",
+          "text": "Answer states how trustworthy the conclusion is (confidence level)"
+        },
+        {
+          "id": "mentions_normalisation",
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline"
+        },
+        {
+          "id": "answers_in_user_language",
+          "text": "Final answer is in Ukrainian"
+        },
+        {
+          "id": "flags_missing_polish_article",
+          "text": "Answer says Polish Wikipedia has no dedicated intermittent fasting article"
+        }
+      ],
+      "required_langs": [
+        "cs"
+      ],
+      "answer_language": "uk"
+    },
+    {
+      "id": 2,
+      "name": "astronomy-uk-trust",
+      "prompt": "Ми думаємо додати курс з астрономії до освітнього застосунку. Чи зростає інтерес до цієї теми в україномовній Wikipedia, і наскільки цьому зростанню можна довіряти?",
+      "expected_output": "Direct answer (the share trend for the Astronomy article in ukwiki), p-value and confidence with reasons, seasonal September peak explained, normalisation caveat, suggestion to check related articles. Ukrainian.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "used_cli",
+          "text": "Agent ran the skill's wpv analyze command"
+        },
+        {
+          "id": "no_own_api_code",
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs"
+        },
+        {
+          "id": "numbers_grounded",
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)"
+        },
+        {
+          "id": "states_confidence",
+          "text": "Answer states how trustworthy the conclusion is (confidence level)"
+        },
+        {
+          "id": "mentions_normalisation",
+          "text": "Answer distinguishes topic interest from overall Wikipedia traffic decline"
+        },
+        {
+          "id": "answers_in_user_language",
+          "text": "Final answer is in Ukrainian"
+        },
+        {
+          "id": "mentions_statistical_test",
+          "text": "Answer backs the trust question with a statistical signal (p-value / significance)"
+        }
+      ],
+      "required_langs": [
+        "uk"
+      ],
+      "answer_language": "uk"
+    },
+    {
+      "id": 3,
+      "name": "english-learning-report",
+      "prompt": "Ми створюємо застосунок для вивчення мов. Порівняй інтерес до вивчення англійської в українській, польській, турецькій, в'єтнамській та індонезійській Wikipedia та підготуй короткий звіт у PDF: які аудиторії варто дослідити наступними й чому?",
+      "expected_output": "Runs one comparative analysis over 5 languages, produces a one-page PDF with ranking, recommendation and caveats (article about the English language is a proxy for interest in learning it).",
+      "files": [],
+      "assertions": [
+        {
+          "id": "used_cli",
+          "text": "Agent ran the skill's wpv analyze command"
+        },
+        {
+          "id": "no_own_api_code",
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs"
+        },
+        {
+          "id": "numbers_grounded",
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)"
+        },
+        {
+          "id": "pdf_one_page",
+          "text": "A one-page PDF report was produced"
+        },
+        {
+          "id": "all_languages_covered",
+          "text": "Analysis covers uk, pl, tr, vi and id"
+        },
+        {
+          "id": "answers_in_user_language",
+          "text": "Final answer is in Ukrainian"
+        },
+        {
+          "id": "gives_ranking",
+          "text": "Answer names which audiences to research next, in order"
+        }
+      ],
+      "required_langs": [
+        "uk",
+        "pl",
+        "tr",
+        "vi",
+        "id"
+      ],
+      "answer_language": "uk"
+    },
+    {
+      "id": 4,
+      "name": "chess-followup-weights",
+      "prompt": "How has interest in chess changed in German and French Wikipedia over the last two years?",
+      "followups": [
+        "Add Spanish and Italian too. For us audience size matters much more than growth - rank all four accordingly."
+      ],
+      "expected_output": "Turn 1: de/fr analysis. Turn 2: re-runs with de,fr,es,it and volume-heavy --weights; ranking reflects size; reuses cache.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "used_cli",
+          "text": "Agent ran the skill's wpv analyze command"
+        },
+        {
+          "id": "no_own_api_code",
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs"
+        },
+        {
+          "id": "numbers_grounded",
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)"
+        },
+        {
+          "id": "all_languages_covered",
+          "text": "Final analysis covers de, fr, es and it"
+        },
+        {
+          "id": "custom_weights",
+          "text": "Follow-up used --weights with volume weighted above growth"
+        },
+        {
+          "id": "answers_in_user_language",
+          "text": "Final answer is in English"
+        }
+      ],
+      "required_langs": [
+        "de",
+        "fr",
+        "es",
+        "it"
+      ],
+      "answer_language": "en"
+    },
+    {
+      "id": 5,
+      "name": "meditation-ja-vs-ko",
+      "prompt": "We're deciding whether to localize our meditation app into Japanese or Korean first. Which one shows healthier interest in meditation / mindfulness on Wikipedia, and how much should we trust that signal?",
+      "expected_output": "Resolves meditation and/or mindfulness items, compares ja vs ko, gives a recommendation with confidence and caveats (views != willingness to pay, language ~ country here).",
+      "files": [],
+      "assertions": [
+        {
+          "id": "used_cli",
+          "text": "Agent ran the skill's wpv analyze command"
+        },
+        {
+          "id": "no_own_api_code",
+          "text": "Agent did not write its own code/curl calls to Wikimedia APIs"
+        },
+        {
+          "id": "numbers_grounded",
+          "text": "Every number in the final answer exists in analysis.json (rounding allowed)"
+        },
+        {
+          "id": "states_confidence",
+          "text": "Answer states how trustworthy the conclusion is (confidence level)"
+        },
+        {
+          "id": "all_languages_covered",
+          "text": "Analysis covers ja and ko"
+        },
+        {
+          "id": "answers_in_user_language",
+          "text": "Final answer is in English"
+        },
+        {
+          "id": "caveat_not_purchase_intent",
+          "text": "Answer notes that views are not willingness to pay / purchase intent"
+        }
+      ],
+      "required_langs": [
+        "ja",
+        "ko"
+      ],
+      "answer_language": "en"
+    }
+  ]
+}
