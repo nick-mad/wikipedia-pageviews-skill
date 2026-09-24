@@ -1,0 +1,1222 @@
+[
+{
+"url": "https://cs.wikipedia.org/w/api.php?format=json&formatversion=2&action=query&titles=P%C5%99eru%C5%A1ovan%C3%BD+p%C5%AFst&prop=redirects&rdnamespace=0&rdlimit=max&rdprop=title",
+"status": 200,
+"body": {
+"batchcomplete": true,
+"query": {
+"pages": [
+{
+"pageid": 1632302,
+"ns": 0,
+"title": "Přerušovaný půst"
+}
+]
+},
+"limits": {
+"redirects": 500
+}
+}
+},
+{
+"url": "https://en.wikipedia.org/w/api.php?format=json&formatversion=2&action=query&list=search&srsearch=intermittent+fasting&srlimit=3&srnamespace=0&srprop=snippet",
+"status": 200,
+"body": {
+"batchcomplete": true,
+"continue": {
+"sroffset": 3,
+"continue": "-||"
+},
+"query": {
+"searchinfo": {
+"totalhits": 2869
+},
+"search": [
+{
+"ns": 0,
+"title": "Intermittent fasting",
+"pageid": 20104879,
+"snippet": "<span class=\"searchmatch\">Intermittent</span> <span class=\"searchmatch\">fasting</span> (IF) is any of various meal timing schedules that cycle between voluntary <span class=\"searchmatch\">fasting</span> (or reduced calorie intake) and non-<span class=\"searchmatch\">fasting</span> over"
+},
+{
+"ns": 0,
+"title": "Fasting",
+"pageid": 187886,
+"snippet": "<span class=\"searchmatch\">Fasting</span> is the act of refraining from eating, and sometimes drinking. However, from a physiological context, &quot;<span class=\"searchmatch\">fasting</span>&quot; may refer to the metabolic status"
+},
+{
+"ns": 0,
+"title": "Michael Mosley",
+"pageid": 23739220,
+"snippet": "with <span class=\"searchmatch\">intermittent</span> <span class=\"searchmatch\">fasting</span> that follows a daily 800-calorie eating plan. His book The <span class=\"searchmatch\">Fast</span> 800 Keto combines a ketogenic diet with <span class=\"searchmatch\">intermittent</span> <span class=\"searchmatch\">fasting</span>. Mosley&#039;s"
+}
+]
+}
+}
+},
+{
+"url": "https://en.wikipedia.org/w/api.php?format=json&formatversion=2&action=query&titles=Intermittent+fasting%7CFasting%7CMichael+Mosley&prop=pageprops&ppprop=wikibase_item%7Cdisambiguation&redirects=1",
+"status": 200,
+"body": {
+"batchcomplete": true,
+"query": {
+"pages": [
+{
+"pageid": 187886,
+"ns": 0,
+"title": "Fasting",
+"pageprops": {
+"wikibase_item": "Q44602"
+}
+},
+{
+"pageid": 20104879,
+"ns": 0,
+"title": "Intermittent fasting",
+"pageprops": {
+"wikibase_item": "Q1666254"
+}
+},
+{
+"pageid": 23739220,
+"ns": 0,
+"title": "Michael Mosley",
+"pageprops": {
+"wikibase_item": "Q6831466"
+}
+}
+]
+}
+}
+},
+{
+"url": "https://pl.wikipedia.org/w/api.php?format=json&formatversion=2&action=query&titles=G%C5%82od%C3%B3wka+lecznicza&prop=pageprops&ppprop=wikibase_item%7Cdisambiguation&redirects=1",
+"status": 200,
+"body": {
+"batchcomplete": true,
+"query": {
+"pages": [
+{
+"pageid": 74017,
+"ns": 0,
+"title": "Głodówka lecznicza",
+"pageprops": {
+"wikibase_item": "Q352490"
+}
+}
+]
+}
+}
+},
+{
+"url": "https://pl.wikipedia.org/w/api.php?format=json&formatversion=2&action=query&titles=G%C5%82od%C3%B3wka+lecznicza&prop=redirects&rdnamespace=0&rdlimit=max&rdprop=title",
+"status": 200,
+"body": {
+"batchcomplete": true,
+"query": {
+"pages": [
+{
+"pageid": 74017,
+"ns": 0,
+"title": "Głodówka lecznicza",
+"redirects": [
+{
+"ns": 0,
+"title": "Głodówka oczyszczająca"
+}
+]
+}
+]
+},
+"limits": {
+"redirects": 500
+}
+}
+},
+{
+"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/aggregate/cs.wikipedia.org/all-access/user/monthly/2024090100/2026083100",
+"status": 200,
+"body": {
+"items": [
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024090100",
+"views": 62292789
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024100100",
+"views": 70881496
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024110100",
+"views": 68852170
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024120100",
+"views": 70360761
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025010100",
+"views": 83396601
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025020100",
+"views": 69753016
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025030100",
+"views": 74887886
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025040100",
+"views": 67010206
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025050100",
+"views": 73630159
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025060100",
+"views": 56271438
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025070100",
+"views": 61159851
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025080100",
+"views": 57515129
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025090100",
+"views": 57306454
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025100100",
+"views": 66546281
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025110100",
+"views": 72883460
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025120100",
+"views": 59967317
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026010100",
+"views": 67410000
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026020100",
+"views": 58306397
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026030100",
+"views": 58040192
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026040100",
+"views": 54688383
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026050100",
+"views": 59792880
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026060100",
+"views": 53683305
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026070100",
+"views": 53131065
+},
+{
+"project": "cs.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026080100",
+"views": 51467770
+}
+]
+}
+},
+{
+"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/aggregate/pl.wikipedia.org/all-access/user/monthly/2024090100/2026083100",
+"status": 200,
+"body": {
+"items": [
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024090100",
+"views": 192493223
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024100100",
+"views": 208701948
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024110100",
+"views": 218936097
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2024120100",
+"views": 219776867
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025010100",
+"views": 252131702
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025020100",
+"views": 211020679
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025030100",
+"views": 224233637
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025040100",
+"views": 199339583
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025050100",
+"views": 194249620
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025060100",
+"views": 170783829
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025070100",
+"views": 186739175
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025080100",
+"views": 196910322
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025090100",
+"views": 189329148
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025100100",
+"views": 201290696
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025110100",
+"views": 228294569
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2025120100",
+"views": 190164557
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026010100",
+"views": 204283824
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026020100",
+"views": 178016304
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026030100",
+"views": 178619982
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026040100",
+"views": 172037842
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026050100",
+"views": 179989593
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026060100",
+"views": 179578875
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026070100",
+"views": 179428492
+},
+{
+"project": "pl.wikipedia",
+"access": "all-access",
+"agent": "user",
+"granularity": "monthly",
+"timestamp": "2026080100",
+"views": 175873090
+}
+]
+}
+},
+{
+"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/cs.wikipedia.org/all-access/user/P%C5%99eru%C5%A1ovan%C3%BD_p%C5%AFst/monthly/2024090100/2026083100",
+"status": 200,
+"body": {
+"items": [
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2024090100",
+"access": "all-access",
+"agent": "user",
+"views": 393
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2024100100",
+"access": "all-access",
+"agent": "user",
+"views": 634
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2024110100",
+"access": "all-access",
+"agent": "user",
+"views": 329
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2024120100",
+"access": "all-access",
+"agent": "user",
+"views": 294
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025010100",
+"access": "all-access",
+"agent": "user",
+"views": 489
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025020100",
+"access": "all-access",
+"agent": "user",
+"views": 272
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025030100",
+"access": "all-access",
+"agent": "user",
+"views": 366
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025040100",
+"access": "all-access",
+"agent": "user",
+"views": 958
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025050100",
+"access": "all-access",
+"agent": "user",
+"views": 225
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025060100",
+"access": "all-access",
+"agent": "user",
+"views": 238
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025070100",
+"access": "all-access",
+"agent": "user",
+"views": 157
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025080100",
+"access": "all-access",
+"agent": "user",
+"views": 386
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025090100",
+"access": "all-access",
+"agent": "user",
+"views": 270
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025100100",
+"access": "all-access",
+"agent": "user",
+"views": 141
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025110100",
+"access": "all-access",
+"agent": "user",
+"views": 151
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2025120100",
+"access": "all-access",
+"agent": "user",
+"views": 218
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026010100",
+"access": "all-access",
+"agent": "user",
+"views": 474
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026020100",
+"access": "all-access",
+"agent": "user",
+"views": 196
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026030100",
+"access": "all-access",
+"agent": "user",
+"views": 179
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026040100",
+"access": "all-access",
+"agent": "user",
+"views": 135
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026050100",
+"access": "all-access",
+"agent": "user",
+"views": 109
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026060100",
+"access": "all-access",
+"agent": "user",
+"views": 115
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026070100",
+"access": "all-access",
+"agent": "user",
+"views": 91
+},
+{
+"project": "cs.wikipedia",
+"article": "Přerušovaný_půst",
+"granularity": "monthly",
+"timestamp": "2026080100",
+"access": "all-access",
+"agent": "user",
+"views": 119
+}
+]
+}
+},
+{
+"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/pl.wikipedia.org/all-access/user/G%C5%82od%C3%B3wka_lecznicza/monthly/2024090100/2026083100",
+"status": 200,
+"body": {
+"items": [
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2024090100",
+"access": "all-access",
+"agent": "user",
+"views": 245
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2024100100",
+"access": "all-access",
+"agent": "user",
+"views": 257
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2024110100",
+"access": "all-access",
+"agent": "user",
+"views": 271
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2024120100",
+"access": "all-access",
+"agent": "user",
+"views": 341
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025010100",
+"access": "all-access",
+"agent": "user",
+"views": 504
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025020100",
+"access": "all-access",
+"agent": "user",
+"views": 382
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025030100",
+"access": "all-access",
+"agent": "user",
+"views": 361
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025040100",
+"access": "all-access",
+"agent": "user",
+"views": 280
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025050100",
+"access": "all-access",
+"agent": "user",
+"views": 252
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025060100",
+"access": "all-access",
+"agent": "user",
+"views": 207
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025070100",
+"access": "all-access",
+"agent": "user",
+"views": 273
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025080100",
+"access": "all-access",
+"agent": "user",
+"views": 224
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025090100",
+"access": "all-access",
+"agent": "user",
+"views": 249
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025100100",
+"access": "all-access",
+"agent": "user",
+"views": 280
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025110100",
+"access": "all-access",
+"agent": "user",
+"views": 212
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2025120100",
+"access": "all-access",
+"agent": "user",
+"views": 196
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026010100",
+"access": "all-access",
+"agent": "user",
+"views": 180
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026020100",
+"access": "all-access",
+"agent": "user",
+"views": 201
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026030100",
+"access": "all-access",
+"agent": "user",
+"views": 229
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026040100",
+"access": "all-access",
+"agent": "user",
+"views": 144
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026050100",
+"access": "all-access",
+"agent": "user",
+"views": 146
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026060100",
+"access": "all-access",
+"agent": "user",
+"views": 124
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026070100",
+"access": "all-access",
+"agent": "user",
+"views": 186
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_lecznicza",
+"granularity": "monthly",
+"timestamp": "2026080100",
+"access": "all-access",
+"agent": "user",
+"views": 145
+}
+]
+}
+},
+{
+"url": "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/pl.wikipedia.org/all-access/user/G%C5%82od%C3%B3wka_oczyszczaj%C4%85ca/monthly/2024090100/2026083100",
+"status": 200,
+"body": {
+"items": [
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2024090100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025040100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025050100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025060100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025070100",
+"access": "all-access",
+"agent": "user",
+"views": 1
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025080100",
+"access": "all-access",
+"agent": "user",
+"views": 2
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025090100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025100100",
+"access": "all-access",
+"agent": "user",
+"views": 1
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2025120100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2026010100",
+"access": "all-access",
+"agent": "user",
+"views": 1
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2026030100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2026050100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+},
+{
+"project": "pl.wikipedia",
+"article": "Głodówka_oczyszczająca",
+"granularity": "monthly",
+"timestamp": "2026060100",
+"access": "all-access",
+"agent": "user",
+"views": 0
+}
+]
+}
+},
+{
+"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254%7CQ44602%7CQ6831466&props=labels%7Cdescriptions%7Csitelinks&languages=en&sitefilter=plwiki%7Ccswiki",
+"status": 200,
+"body": {
+"entities": {
+"Q1666254": {
+"type": "item",
+"id": "Q1666254",
+"labels": {
+"en": {
+"language": "en",
+"value": "intermittent fasting"
+}
+},
+"descriptions": {
+"en": {
+"language": "en",
+"value": "a diet that cycles between a period of fasting and non-fasting"
+}
+},
+"sitelinks": {
+"cswiki": {
+"site": "cswiki",
+"title": "Přerušovaný půst",
+"badges": []
+}
+}
+},
+"Q44602": {
+"type": "item",
+"id": "Q44602",
+"labels": {
+"en": {
+"language": "en",
+"value": "fasting"
+}
+},
+"descriptions": {
+"en": {
+"language": "en",
+"value": "willing abstinence from some, or reduced consumption of, food, drink or both, for a period of time"
+}
+},
+"sitelinks": {
+"cswiki": {
+"site": "cswiki",
+"title": "Půst",
+"badges": []
+},
+"plwiki": {
+"site": "plwiki",
+"title": "Post",
+"badges": []
+}
+}
+},
+"Q6831466": {
+"type": "item",
+"id": "Q6831466",
+"labels": {
+"en": {
+"language": "en",
+"value": "Michael Mosley"
+}
+},
+"descriptions": {
+"en": {
+"language": "en",
+"value": "British journalist, producer and presenter (1957–2024)"
+}
+},
+"sitelinks": {}
+}
+},
+"success": 1
+}
+},
+{
+"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254&props=labels%7Cdescriptions%7Csitelinks&languages=pl%7Ccs%7Cen&sitefilter=plwiki%7Ccswiki",
+"status": 200,
+"body": {
+"entities": {
+"Q1666254": {
+"type": "item",
+"id": "Q1666254",
+"labels": {
+"en": {
+"language": "en",
+"value": "intermittent fasting"
+},
+"cs": {
+"language": "cs",
+"value": "Přerušovaný půst"
+}
+},
+"descriptions": {
+"en": {
+"language": "en",
+"value": "a diet that cycles between a period of fasting and non-fasting"
+}
+},
+"sitelinks": {
+"cswiki": {
+"site": "cswiki",
+"title": "Přerušovaný půst",
+"badges": []
+}
+}
+}
+},
+"success": 1
+}
+}
+]

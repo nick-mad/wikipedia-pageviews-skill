@@ -1,0 +1,15 @@
+# local dev tooling (not part of the deliverable)
+.agents/
+.claude/
+skills-lock.json
+pes_task_1.md
+
+# python / uv
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# runtime outputs
+wpv-output/
+*-workspace/
