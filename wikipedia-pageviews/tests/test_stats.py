@@ -99,3 +99,23 @@ def test_short_daily_window_never_high_confidence():
     assert m["verdict"] == "growing"
     assert m["confidence"]["level"] != "high"
     assert any("less than a year" in r for r in m["confidence"]["reasons"])
+
+
+def test_sen_confidence_interval_contains_slope_and_widens_with_autocorrelation():
+    share = noisy(100, growth_per_year=0.3, sd=0.15)
+    ly = stats.safe_log(share)
+    mk = stats.mann_kendall(ly)
+    slope, _ = stats.sen_slope(ly)
+    lo, hi = stats.sen_ci(ly, mk["var"])
+    assert lo < slope < hi
+    lo2, hi2 = stats.sen_ci(ly, mk["var"] * 2)
+    assert lo2 <= lo and hi2 >= hi
+
+
+def test_many_empty_months_cap_confidence():
+    share = noisy(100, growth_per_year=0.3)
+    views = share * 50
+    views[::3] = 0  # a third of the months have no recorded views
+    m = stats.describe(views, share, "monthly", MONTHS)
+    assert m["zero_points"] == 12
+    assert m["confidence"]["level"] == "low"

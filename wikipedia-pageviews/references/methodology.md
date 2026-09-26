@@ -5,6 +5,10 @@ wants to change an assumption.
 
 ## Data
 
+Outputs per analysis: `analysis.json` (everything), `timeseries.csv` (period × series:
+views, project views, views per million, spike flag), `chart.png`, and optionally
+`report.pdf`.
+
 - Source: Wikimedia Pageviews REST API (`wikimedia.org/api/rest_v1/metrics/pageviews`).
   Available from 2015-07; monthly data for a month appears a few days after it ends.
 - `agent=user`: human traffic only. Wikimedia separately labels `spider` and
@@ -44,6 +48,10 @@ so it reads "views per million". Raw figures are reported next to it for context
   `pymannkendall.yue_wang_modification_test(lag=1)`, except that the factor is
   floored at 1, so the correction only ever makes the test stricter.
   `mk_p_uncorrected` in analysis.json holds the plain value.
+- **95% confidence interval of the slope**: Sen's (1968) rank method, the same as
+  `scipy.stats.theilslopes`, but using the autocorrelation-corrected variance of S,
+  so it widens when months are correlated. `growth_ci_pct_per_year_uncorrected` holds
+  the plain interval that scipy computes.
 - **Recent vs prior**: the last 12 months against the 12 before, or half against half
   for shorter series. A full-year window cancels seasonality.
 
@@ -73,6 +81,7 @@ verdict with spikes replaced by the trend value.
 | trend, YoY and spike-free YoY point the same way | yes | – | – |
 | robust to spikes | spikes < 20 % of views and verdict unchanged without them | – | – |
 | volume | median ≥1000/month (≥30/day) | ≥100/month (≥3/day) | below that |
+| completeness | – | – | >20% of periods with zero recorded views (noted from the first one) |
 
 High ≥ 4, medium ≥ 2.5, otherwise low. A stand-in article (not the same Wikidata
 item) caps confidence at medium.

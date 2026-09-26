@@ -14,7 +14,8 @@ LABELS = {
         "col_spikes": "Spikes", "col_verdict": "Verdict", "col_conf": "Confidence",
         "col_rank": "Rank", "col_score": "Score",
         "footnote": "* measured on share of all views of that language edition "
-                    "(removes overall Wikipedia traffic changes). Trend = Sen's slope, "
+                    "(removes overall Wikipedia traffic changes). Trend = Sen's slope "
+                    "[95% confidence interval], "
                     "significance = Mann-Kendall with autocorrelation correction. "
                     "Recent vs prior = last {win} {unit}s vs previous {win}.",
         "recommendation": "Recommendation", "next_steps": "Next steps",
@@ -45,7 +46,8 @@ LABELS = {
         "col_spikes": "Сплески", "col_verdict": "Висновок", "col_conf": "Довіра",
         "col_rank": "Ранг", "col_score": "Бал",
         "footnote": "* розраховано на частці від усіх переглядів мовного розділу "
-                    "(прибирає загальні зміни трафіку Wikipedia). Тренд = нахил Сена, "
+                    "(прибирає загальні зміни трафіку Wikipedia). Тренд = нахил Сена "
+                    "[95% довірчий інтервал], "
                     "значущість = тест Манна-Кендалла з поправкою на автокореляцію. "
                     "Останній vs попередній = останні {win} ({unit}) проти попередніх {win}.",
         "recommendation": "Рекомендація", "next_steps": "Наступні кроки",

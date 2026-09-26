@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated": "2026-09-24T19:19:22",
+ "generated": "2026-09-26T16:24:02",
  "params": {
   "topics": [
    {
@@ -36,7 +36,7 @@
  },
  "entities": {
   "Q1666254": {
-   "label": "Přerušovaný půst",
+   "label": "intermittent fasting",
    "description": "a diet that cycles between a period of fasting and non-fasting",
    "sitelinks": {
     "pl": null,
@@ -44,8 +44,8 @@
    }
   },
   "Q44602": {
-   "label": "poszczenie",
-   "description": "powstrzymanie się od czegoś dla większego dobra lub ograniczanie jakiegoś dobra w szczytnym celu",
+   "label": "fasting",
+   "description": "willing abstinence from some, or reduced consumption of, food, drink or both, for a period of time",
    "sitelinks": {
     "pl": "Post",
     "cs": "Půst"
@@ -108,6 +108,14 @@
     "median_views": 231.5,
     "median_per_million": 3.7673932562515415,
     "growth_pct_per_year": -47.08326372282515,
+    "growth_ci_pct_per_year": [
+     -58.817802473792845,
+     -29.42181850225074
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -58.817802473792845,
+     -29.42181850225074
+    ],
     "growth_pct_per_year_despiked": -44.57767499451046,
     "raw_growth_pct_per_year": -53.71248854005748,
     "recent_vs_prior_pct": -47.6865327905592,
@@ -146,6 +154,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 9.670377906553965,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -154,7 +163,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p<0.001)",
+      "+ trend statistically significant (p<0.001; 95% CI [-58.8%; -29.4%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ result holds without the 1 spike(s)",
       "~ modest volume (median 232 views/month)"
@@ -261,6 +270,14 @@
     "median_views": 1216.0,
     "median_per_million": 6.087389871222881,
     "growth_pct_per_year": -4.633744653013727,
+    "growth_ci_pct_per_year": [
+     -49.14243973556809,
+     90.10981626587274
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -39.469094451916355,
+     58.66457889275214
+    ],
     "growth_pct_per_year_despiked": -4.633744653013727,
     "raw_growth_pct_per_year": -12.869094965206818,
     "recent_vs_prior_pct": -6.064067255073291,
@@ -299,6 +316,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "flat",
     "verdict_despiked": "flat",
     "confidence": {
@@ -414,6 +432,14 @@
     "median_views": 539.0,
     "median_per_million": 7.597010901045657,
     "growth_pct_per_year": -24.282285021956472,
+    "growth_ci_pct_per_year": [
+     -61.99266620261174,
+     120.67233364590648
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -52.373276197823785,
+     46.473155535122324
+    ],
     "growth_pct_per_year_despiked": -23.053243657073697,
     "raw_growth_pct_per_year": -34.01933570102259,
     "recent_vs_prior_pct": -32.09938961526934,
@@ -454,6 +480,7 @@
      4
     ],
     "spike_share_pct": 14.242180879620332,
+    "zero_points": 0,
     "verdict": "unclear",
     "verdict_despiked": "unclear",
     "confidence": {

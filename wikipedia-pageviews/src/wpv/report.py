@@ -137,7 +137,10 @@ def _matches(v: float, known: set[float]) -> bool:
     return any(_is_rounding_of(v, abs(k)) for k in known)
 
 
-_NOT_PROSE = re.compile(r"`[^`]*`|https?://\S+|(?:[\w.~-]*/)+[\w.~-]+")
+# code spans, URLs, and file paths (absolute, ~/ or ./, or with 2+ slashes);
+# "views/month" is prose and stays
+_NOT_PROSE = re.compile(r"`[^`]*`|https?://\S+|(?<!\S)(?:~|\.{1,2})?/[^\s`]+"
+                        r"|\b[\w.-]+/[\w.-]+/[^\s`]+")
 
 
 def unverified(text: str, known: set[float]) -> list[str]:
@@ -208,7 +211,11 @@ def build_pdf(a: dict, out_dir: str, pdf_path: str, headline: str, summary: str,
             continue
         win = m["comparison_window"]
         lvl = m["confidence"]["level"]
-        cells = [s["id"], f"{m['median_views']:,.0f}", _pct(m["growth_pct_per_year"]),
+        ci = m.get("growth_ci_pct_per_year")
+        trend = _pct(m["growth_pct_per_year"]) + (
+            f"<br/><font size='6' color='#666666'>[{ci[0]:+.0f}; {ci[1]:+.0f}]</font>"
+            if ci and None not in ci else "")
+        cells = [s["id"], f"{m['median_views']:,.0f}", trend,
                  _pct(m["recent_vs_prior_pct"]), str(m["spike_count"]),
                  L[m["verdict"]],
                  f"<font color='{conf_color[lvl]}'>{L[lvl]}</font>"]
@@ -217,7 +224,7 @@ def build_pdf(a: dict, out_dir: str, pdf_path: str, headline: str, summary: str,
             cells.append(f"{r['rank']} ({r['score']:.2f})" if r else "–")
         rows.append([Paragraph(c if "<font" in c else escape(c), st["cell"]) for c in cells])
 
-    widths = [48, 24, 20, 22, 13, 20, 18] + ([17] if ranks else [])
+    widths = [42, 23, 20, 22, 18, 21, 18] + ([17] if ranks else [])
     scale = 182 / sum(widths)
     table = Table(rows, colWidths=[w * scale * mm for w in widths], repeatRows=1)
     table.setStyle(TableStyle([

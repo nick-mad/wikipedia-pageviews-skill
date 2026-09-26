@@ -1,13 +1,14 @@
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["pymannkendall>=1.4", "numpy"]
+# dependencies = ["pymannkendall>=1.4", "numpy", "scipy"]
 # ///
 """Independent check of a saved analysis.json against third-party code.
 
 1. Raw numbers: re-downloads the main article's monthly views and the project
    totals with plain urllib (not the skill's client) and compares sums.
 2. Statistics: recomputes Sen's slope and the Mann-Kendall p-value (plain and
-   Yue-Wang corrected) with the pymannkendall library.
+   Yue-Wang corrected) with the pymannkendall library, and the slope's 95%
+   confidence interval with scipy.stats.theilslopes.
 
     uv run --script evals/crosscheck.py wpv-output/<slug>/analysis.json
 """
@@ -20,6 +21,7 @@ import urllib.request
 
 import numpy as np
 import pymannkendall as mk
+from scipy.stats import theilslopes
 
 API = "https://wikimedia.org/api/rest_v1/metrics/pageviews"
 UA = {"User-Agent": "wikipedia-pageviews-skill crosscheck"}
@@ -64,7 +66,11 @@ def main(path):
         growth = (np.exp(mk.sens_slope(ly).slope * steps) - 1) * 100
         p_orig = mk.original_test(ly).p
         p_yw = mk.yue_wang_modification_test(ly, lag=1).p
-        stats_ok = (abs(growth - m["growth_pct_per_year"]) < 0.01
+        ts = theilslopes(ly, alpha=0.95)
+        ci = [(np.exp(b * steps) - 1) * 100 for b in (ts.low_slope, ts.high_slope)]
+        ours_ci = m.get("growth_ci_pct_per_year_uncorrected")
+        ci_ok = ours_ci is None or all(abs(x - y) < 0.01 for x, y in zip(ci, ours_ci))
+        stats_ok = ci_ok and (abs(growth - m["growth_pct_per_year"]) < 0.01
                     and abs(p_orig - m["mk_p_uncorrected"]) < 1e-6
                     and m["mk_p"] >= p_yw - 1e-6)  # ours is floored: never less strict
         ok &= raw_ok and stats_ok
@@ -72,7 +78,9 @@ def main(path):
               f"(article {main_views:,} vs {art['article_views']:,}; project {proj:,}) | "
               f"stats {'OK ' if stats_ok else 'DIFF'} (growth {growth:.2f} vs "
               f"{m['growth_pct_per_year']:.2f}; p {p_orig:.4g}/{p_yw:.4g} vs "
-              f"{m['mk_p_uncorrected']:.4g}/{m['mk_p']:.4g})")
+              f"{m['mk_p_uncorrected']:.4g}/{m['mk_p']:.4g}; CI scipy "
+              f"[{ci[0]:.1f}; {ci[1]:.1f}] vs "
+              + (f"[{ours_ci[0]:.1f}; {ours_ci[1]:.1f}]" if ours_ci else "n/a") + ")")
     return 0 if ok else 1
 
 

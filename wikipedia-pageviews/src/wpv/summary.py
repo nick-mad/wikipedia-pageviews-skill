@@ -6,7 +6,7 @@ number already rounded the way it should appear in an answer.
 
 from __future__ import annotations
 
-from .stats import fmt_p
+from .stats import fmt_ci, fmt_p
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
@@ -34,7 +34,7 @@ def render(a: dict, out_dir: str | None = None) -> str:
     ]
     if out_dir:
         chart = f", {out_dir}/chart.png" if any(s.get("metrics") for s in a["series"]) else ""
-        lines.append(f"saved: {out_dir}/analysis.json{chart}")
+        lines.append(f"saved: {out_dir}/analysis.json, {out_dir}/timeseries.csv{chart}")
     lines.append("")
     for s in a["series"]:
         if not s.get("metrics"):
@@ -53,7 +53,8 @@ def render(a: dict, out_dir: str | None = None) -> str:
         lines += [
             f"{s['id']}  <- {arts}",
             f"  median {m['median_views']:,.0f} views/{unit} | total {m['total_views']:,}",
-            f"  trend (share of wiki): {fmt_pct(m['growth_pct_per_year'])}/yr, {fmt_p(m['mk_p'])}"
+            f"  trend (share of wiki): {fmt_pct(m['growth_pct_per_year'])}/yr, {fmt_p(m['mk_p'])},"
+            f" 95% CI {fmt_ci(m.get('growth_ci_pct_per_year', (None, None)))}"
             f" | raw views trend: {fmt_pct(m['raw_growth_pct_per_year'])}/yr",
             f"  last {m['comparison_window']} {unit}s vs previous {m['comparison_window']}: "
             f"{fmt_pct(m['recent_vs_prior_pct'])} (share), {fmt_pct(m['raw_recent_vs_prior_pct'])} (raw)"

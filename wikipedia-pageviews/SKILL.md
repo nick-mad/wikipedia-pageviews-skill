@@ -12,7 +12,9 @@ code to call Wikimedia APIs or compute trends; the CLI already handles redirects
 bot filtering, normalisation, spikes and caching, and its numbers are the ones the
 PDF checker accepts.
 
-Run it with the full path, e.g. `/path/to/wikipedia-pageviews/scripts/wpv analyze ...`.
+Run it with the full path from the user's working directory, e.g.
+`/path/to/wikipedia-pageviews/scripts/wpv analyze ...`. Don't `cd` into the skill
+directory: outputs (`wpv-output/`) are written relative to where you run it.
 The first run installs dependencies (about 30 s); later runs are fast, and repeated
 requests are served from a local cache.
 
@@ -29,7 +31,15 @@ Search in English, or in the language the user wrote in (`--search-lang`). Pick 
 candidate whose description matches the user's meaning. Never pick one marked
 DISAMBIGUATION. The output lists which requested languages have an article.
 
-- **No article in a language**: say so in your answer. This finding matters on its
+- **Ambiguous topics.** "Learning English" could mean English language, English as a
+  second language, or language education, and those articles have very different
+  audiences. Answer first, offer alternatives second: analyse the closest candidate,
+  say in the answer which article stands in for the topic, and end with one line such
+  as "If you meant X or Y instead, I can rerun for those." Ask before analysing only
+  when the candidates are unrelated concepts (e.g. "Mercury": planet vs element), so
+  that any answer would be about the wrong thing.
+- **No article in a language**: don't stop to ask; analyse what exists and say so
+  in your answer. This finding matters on its
   own: nobody has written about the topic in that language. To still measure
   something, search that language directly
   (`wpv resolve "<local words>" --search-lang pl --langs pl`). If a close article
@@ -55,13 +65,17 @@ wpv analyze --topic "English=Q1860" --langs uk,pl,tr,vi --weights growth=0.3,vol
 Defaults: the last 24 complete months, monthly, human traffic only. Adjust
 `--months`, `--start YYYY-MM --end YYYY-MM`, or `--granularity daily --days 90`
 (daily is for recent events only). Use `--topic` several times to compare topics.
-The command prints a summary. It also saves `analysis.json` and `chart.png` into
-`wpv-output/<slug>/` (the output tells you the path).
+The command prints a summary. It also saves `analysis.json`, `timeseries.csv` (for
+spreadsheets) and `chart.png` into `wpv-output/<slug>/`. The summary tells you the
+path. If the user asks for the data or a table, point them to the CSV instead of
+pasting rows.
 
 ### 3. Answer from the summary
 
 Base every claim on the printed summary. For each series it gives:
-- **trend (share of wiki)**: the main growth figure, in %/year. It is measured on
+- **trend (share of wiki)**: the main growth figure, in %/year, with a 95%
+  confidence interval. An interval that includes 0 means the direction is not
+  established. It is measured on
   the article's share of all views of that language edition, because overall
   Wikipedia traffic is falling in most languages (see NOTES). Raw views are
   shown for context. When raw views fall but the share is flat, the topic is

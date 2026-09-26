@@ -87,9 +87,9 @@ def grade(run_dir: Path, ev: dict) -> dict:
             m = re.search(r"confidence|trust|reliab|довір|надійн|впевнен", low)
             return bool(m), m.group(0) if m else "no confidence statement"
         if aid == "mentions_normalisation":
-            m = re.search(r"share of|normali|per million|overall (wikipedia )?traffic|"
-                          r"частк|нормаліз|на мільйон|загальн\w* трафік|трафік\w* (всієї|усієї)",
-                          low)
+            m = re.search(r"share of|normali|per million|overall (wikipedia )?traffic|site-wide|"
+                          r"частк|нормаліз|на мільйон|загальн\w*[^.\n]{0,30}трафік|"
+                          r"втрача\w* трафік|трафік\w* (всієї|усієї)", low)
             return bool(m), m.group(0) if m else "no mention of normalisation / overall traffic"
         if aid == "answers_in_user_language":
             ok = lang_ok(answer, ev["answer_language"])
@@ -127,7 +127,7 @@ def grade(run_dir: Path, ev: dict) -> dict:
                           low)
             return bool(m), m.group(0).strip() if m else "no ordered recommendation"
         if aid == "caveat_not_purchase_intent":
-            m = re.search(r"willingness to pay|purchase|pay for|paying|revenue|monetiz|"
+            m = re.search(r"willingness to (pay|install|buy)|purchase|pay for|paying|revenue|monetiz|"
                           r"views? (≠|!=|is not|are not|aren't|don't equal)|not the same as|"
                           r"market (interest|demand)|платити|купівел|платоспроможн|≠ попит", low)
             return bool(m), m.group(0) if m else "no views-vs-payment caveat"

@@ -4,48 +4,49 @@ How has interest in chess changed in German and French Wikipedia over the last t
 
 `Skill`: `wikipedia-pageviews`
 
-**assistant:** I'll analyze chess interest on German and French Wikipedia over the last two years. Let me start by resolving the topic and then fetching the data.
+**assistant:** I'll analyze interest in chess across German and French Wikipedia over the last two years. Let me start by resolving the topic and then gathering the data.
 
 `Bash`: `wpv resolve "chess" --langs de,fr`
 
 `Bash`: `wpv analyze --topic "chess=Q718" --langs de,fr --months 24`
 
-**assistant:** ## Chess Interest on German and French Wikipedia
+**assistant:** **Interest in chess has declined in both German and French Wikipedia over the last two years**, though the trend is more pronounced in French.
 
-**Interest in chess is declining in both languages**, though German Wikipedia is holding ground better than French.
+## Key findings:
 
-**Key findings:**
+- **German Wikipedia (Schach)**: Declining at **-14.6%/year** (share of all Wikipedia views), with high confidence. Median traffic: 14,932 views/month.
+- **French Wikipedia (Échecs)**: Declining at **-16.2%/year** with high confidence. Median traffic: 13,994 views/month.
 
-- **German Wikipedia (Schach)**: Declining at **-14.6%/year** of Wikipedia share (HIGH confidence). Median 14,932 views/month. Raw views fell faster at -21.4%/year because overall German Wikipedia traffic is declining.
+**Year-over-year comparison** (last 12 months vs. previous 12):
+- German: -12.5% (share)
+- French: -25.0% (share)
 
-- **French Wikipedia (Échecs)**: Declining faster at **-16.2%/year** of share (HIGH confidence, though marginally significant at p=0.067). Median 13,994 views/month. Year-over-year comparison shows steeper drops: -25% in share, -32.3% in raw views.
+The French decline accelerated significantly in the recent period, even after removing two news spikes (March and July 2025). Both declines remain even when accounting for the overall traffic decline of their respective Wikipedia editions (-7.3% for German, -10.6% for French overall).
 
-**Important context:** The trend measures chess as a share of all Wikipedia views in each language. Overall Wikipedia traffic in both languages is falling (-7.3%/yr in German, -10.6%/yr in French), so chess is declining *faster* than the average article in both places.
+**German maintains a larger audience** (ranking 1st on this comparison), while both articles show no growth and no clear growth signals. The declines are not driven by isolated news events—the trend is consistent across both the full period and when spikes are excluded.
 
-**Reliability:** Both verdicts are solid. German has strong statistical significance (p=0.038); French's p-value (0.067) is marginal but the trend holds consistently across all comparisons, with or without the two small spikes in March and July 2025.
-
-**Why the decline?** The data doesn't say. Possible factors: reduced interest in chess content on Wikipedia specifically, audience migration to other platforms (YouTube chess channels, online games), or seasonal effects if this period happened to capture off-season months. A check on related articles (chess openings, famous chess players) or a longer historical view could help isolate whether this is a lasting shift or a temporary dip.
+This suggests chess interest as a topic has retreated on these Wikipedia editions, though the shift is modest in absolute terms (roughly a seasonal month of traffic every year).
 
 ## USER
 
 Add Spanish and Italian too. For us audience size matters much more than growth - rank all four accordingly.
 
-`Bash`: `wpv analyze --topic "chess=Q718" --langs de,fr,es,it --months 24 --weights growth=0.1,volume=0.8,trust=0.1`
+`Bash`: `wpv analyze --topic "chess=Q718" --langs de,fr,es,it --months 24 --weights growth=0.1,volume=0.7,trust=0.2`
 
-**assistant:** **Ranked by audience size (volume-weighted):**
+**assistant:** **Ranked by audience size, Spanish dominates the chess interest across these four Wikipedia editions:**
 
-1. **Spanish (es:Ajedrez)** — 21,862 median views/month — *Your largest audience*
-2. **German (de:Schach)** — 14,932 median views/month
-3. **French (fr:Échecs)** — 13,994 median views/month
-4. **Italian (it:Scacchi)** — 8,632 median views/month
+## Ranking (prioritizing audience size):
 
-**All four are declining**, but at different rates:
+1. **Spanish (es:Ajedrez)** – 21,862 median views/month | Declining -21.7%/yr (statistically significant)
+2. **German (de:Schach)** – 14,932 median views/month | Declining -14.6%/yr (statistically significant)
+3. **French (fr:Échecs)** – 13,994 median views/month | Declining -16.2%/yr (marginally significant)
+4. **Italian (it:Scacchi)** – 8,632 median views/month | Declining -11.1%/yr (marginally significant)
 
-| Language | Share Decline | Raw Decline | Confidence | Note |
-|----------|---------------|------------|-----------|------|
-| Spanish | -21.7%/yr | -37.4%/yr | HIGH | Most aggressive decline; driven partly by Spanish Wikipedia's steep overall traffic drop (-19.8%/yr) |
-| French | -16.2%/yr | -26.5%/yr | HIGH | Marginally significant (p=0.067) |
-| German | -14.6%/yr | -21.4%/yr | HIGH | Best-performing of the four |
-| Italian | -11.1%/yr | -23.5%/yr | HIGH | Least declining in share, but also smallest audience |
+## Audience snapshot (total views over 24 months):
+- Spanish: 614,688 (largest by far)
+- German: 383,980
+- French: 364,996
+- Italian: 204,885 (smallest)
 
-**Strategic implication:** Spanish offers the largest reach but is declining fastest. German is a solid second with stable viewership and better trend resilience. If you're optimizing for sustained audience, German may be a safer bet despite Spanish's current size advantage.
+## Trend comparison:
+Spanish has both the largest audience **and** the steepest decline (-21.7%/yr), suggesting its chess interest is falling faster than the other editions. Italian shows the gentlest decline (-11.1%/yr), which is the only positive signal here, though it's marginal and the audience is the smallest. All four editions show declining interest in chess—there's no growth story in any of them.

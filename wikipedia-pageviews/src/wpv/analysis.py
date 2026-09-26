@@ -131,7 +131,7 @@ def build(client: Client, topics: list[dict], langs: list[str],
           notes: list[str] | None = None) -> dict:
     weights = weights or {"growth": 0.5, "volume": 0.3, "trust": 0.2}
     all_qids = sorted({q for t in topics for q in t["qids"]})
-    ents = wiki.entities(client, all_qids, langs, label_langs=langs)
+    ents = wiki.entities(client, all_qids, langs, label_langs=[])  # English labels only
     notes = list(notes or [])
     for q in all_qids:
         if q not in ents:
@@ -261,3 +261,23 @@ def build(client: Client, topics: list[dict], langs: list[str],
         "limitations": LIMITATIONS,
     }
 
+
+
+def write_csv(a: dict, path: str) -> str:
+    """Long-format time series (one row per period x series) for spreadsheets."""
+    import csv
+
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["period", "topic", "lang", "views", "project_views",
+                    "views_per_million", "news_spike"])
+        for s in a["series"]:
+            if "views" not in s:
+                continue
+            spikes = (s.get("metrics") or {}).get("spike_mask") or [False] * len(s["views"])
+            for k, v, p, pm, sp in zip(a["timeline"], s["views"], s["project_views"],
+                                       s["per_million"], spikes):
+                period = f"{k[:4]}-{k[4:6]}" if a["params"]["granularity"] == "monthly" \
+                    else f"{k[:4]}-{k[4:6]}-{k[6:]}"
+                w.writerow([period, s["topic"], s["lang"], v, p, pm, int(sp)])
+    return path

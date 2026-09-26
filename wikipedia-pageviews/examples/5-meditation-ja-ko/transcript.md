@@ -4,46 +4,42 @@ We're deciding whether to localize our meditation app into Japanese or Korean fi
 
 `Skill`: `wikipedia-pageviews`
 
-**assistant:** I'll analyze meditation and mindfulness interest across Japanese and Korean Wikipedia to help you decide on localization priority.
-
-Let me start by resolving these topics to their Wikidata items:
+**assistant:** I'll help you compare meditation/mindfulness interest across Japanese and Korean Wikipedia. Let me start by resolving the topics to find the right articles.
 
 `Bash`: `wpv resolve "meditation" --langs ja,ko`
 
 `Bash`: `wpv resolve "mindfulness" --langs ja,ko`
 
-**assistant:** Now let me analyze the pageview trends for both topics across these two languages:
+**assistant:** Perfect—both languages have articles on meditation and mindfulness. Let me analyze both topics to see which market shows healthier interest.
 
 `Bash`: `wpv analyze --topic "Meditation=Q108458" --topic "Mindfulness=Q341045" --langs ja,ko`
 
-**assistant:** ## Summary: Neither language shows strong interest, but **Japanese is the safer bet**
+**assistant:** **Japanese shows significantly healthier interest** for a meditation app launch—but with an important caveat: interest is declining in both markets.
 
-**The headline:** Both Japanese and Korean show *declining* interest in meditation and mindfulness on Wikipedia—not growing. However, Japanese has more absolute traffic and more stable trends, making it the less risky choice if you must pick one.
+## The key numbers:
 
-### The numbers
+**Japanese** has roughly **4–5× larger audiences**:
+- Meditation (ja): **3,768 median views/month**, -38.3%/yr (high confidence)
+- Mindfulness (ja): **4,422 median views/month**, -46.2%/yr (high confidence)
 
-**Audience size (median monthly views):**
-- Mindfulness [ja]: 4,422 views/month — largest audience
-- Meditation [ja]: 3,768 views/month
-- Mindfulness [ko]: 666 views/month
-- Meditation [ko]: 908 views/month
+**Korean** has lower volume and mixed signals:
+- Meditation (ko): **908 median views/month**, -45.4%/yr (high confidence)
+- Mindfulness (ko): **666 median views/month**, -11.3%/yr (**unclear trend**, low confidence)
 
-Japanese outpaces Korean by 4–6x on both topics.
+The ranking across all four series puts **Meditation [ja]** first, followed by **Mindfulness [ja]**, with both Korean topics trailing.
 
-**Trends (share of Wikipedia):**
-- Meditation [ja]: **-38.3%/year** (high confidence) — declining but slower
-- Mindfulness [ja]: **-46.2%/year** (high confidence) — steepest decline
-- Meditation [ko]: **-45.4%/year** (high confidence) — similar to ja mindfulness
-- Mindfulness [ko]: **-11.3%/year** (LOW confidence) — flattest, but with mixed signals
+## Should you trust this signal?
 
-### How much to trust this
+**Cautiously yes, but not for growth.** The confidence varies:
 
-**High trust (Japanese data):** 24-month clear trends, statistically significant, no news spikes. What's happening: meditation and mindfulness are losing Wikipedia share in Japan, likely because the topics have matured and moved to YouTube, apps, and paid platforms—not necessarily because interest died.
+✅ **High confidence on Japanese**: Long stable series (24 months), large volume, statistically significant trends (p<0.001). The declines are real.
 
-**Low trust (Korean mindfulness):** The year-over-year comparison shows a small +4.1% increase, but the slope test shows -11.3% decline. This disagreement, combined with low volume (666 views/month) and Korea's overall Wikipedia collapse (-23%/year vs Japan's -2.7%), makes this signal unreliable.
+⚠️ **Mixed on Korean mindfulness**: Trend test shows no significant change (p=0.520), and year-over-year comparisons disagree. The signal is too noisy to rely on—though notably, it's not *clearly* declining like the others.
 
-### The caveat that matters most
+⚠️ **Both markets are declining**—but that's partly because Wikipedia itself is shrinking in these regions (Japanese Wikipedia down 2.7%/yr site-wide, Korean down 23%/yr). The trend reflects the *share* of Wikipedia views (what percentage of all traffic goes to meditation articles), which corrects for that.
 
-Wikipedia views ≠ app market interest. These declines likely reflect Wikipedia's overall traffic loss and topic maturation, not actual demand. If meditation apps are growing in these markets (check App Annie / Sensor Tower), Wikipedia decline is a poor signal for your choice.
+## What this means for your decision:
 
-**My recommendation:** Localize to Japanese first (larger audience, more stable baseline), but treat this Wikipedia data as one small input, not a decider. Check app-store trends, search volume, and local market reports for a fuller picture.
+**Japanese first** is the clearer call: larger existing audience and more reliable data. If you're looking for a market that's *growing*, Wikipedia suggests neither is—but Japanese still has more volume to capture. Korean's ambiguous mindfulness trend might hide either a small but engaged audience or just noisy data at low volume.
+
+A next step: **check if there are related wellness/health topics** (yoga, psychotherapy, stress) trending differently in Korean—that might signal whether wellness interest is growing there in ways the meditation article doesn't show.

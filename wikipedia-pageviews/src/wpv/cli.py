@@ -46,6 +46,16 @@ def _slug(text: str) -> str:
     return s[:60] or "analysis"
 
 
+def _output_root() -> str:
+    """./wpv-output, except when run from inside the skill directory (outputs must
+    not end up inside the skill) - then ~/wpv-output."""
+    skill_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    cwd = os.path.realpath(os.getcwd())
+    if cwd == skill_dir or cwd.startswith(skill_dir + os.sep):
+        return os.path.join(os.path.expanduser("~"), "wpv-output")
+    return "wpv-output"
+
+
 def cmd_resolve(args) -> int:
     client = Client()
     langs = args.langs or []
@@ -97,10 +107,11 @@ def cmd_analyze(args) -> int:
     a = analysis.build(client, topics, args.langs, start, end, args.granularity,
                        args.access, "user", not args.no_redirects, args.weights, notes)
     out = args.out or os.path.join(
-        "wpv-output", _slug("_".join(t["label"] for t in topics) + "_" + "-".join(args.langs)))
+        _output_root(), _slug("_".join(t["label"] for t in topics) + "_" + "-".join(args.langs)))
     os.makedirs(out, exist_ok=True)
     with open(os.path.join(out, "analysis.json"), "w", encoding="utf-8") as f:
         json.dump(a, f, ensure_ascii=False, indent=1)
+    analysis.write_csv(a, os.path.join(out, "timeseries.csv"))
     if any(s.get("metrics") for s in a["series"]):
         plot(a, os.path.join(out, "chart.png"), args.label_lang)
     print(summary.render(a, out))

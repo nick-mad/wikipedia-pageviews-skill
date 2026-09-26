@@ -29,7 +29,7 @@
 },
 "query": {
 "searchinfo": {
-"totalhits": 2869
+"totalhits": 2870
 },
 "search": [
 {
@@ -1107,7 +1107,7 @@
 }
 },
 {
-"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254%7CQ44602%7CQ6831466&props=labels%7Cdescriptions%7Csitelinks&languages=en&sitefilter=plwiki%7Ccswiki",
+"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254%7CQ44602%7CQ6831466&props=labels%7Cdescriptions%7Csitelinks&languages=en",
 "status": 200,
 "body": {
 "entities": {
@@ -1127,9 +1127,159 @@
 }
 },
 "sitelinks": {
+"arwiki": {
+"site": "arwiki",
+"title": "صوم متقطع",
+"badges": []
+},
+"astwiki": {
+"site": "astwiki",
+"title": "Ayunu intermitente",
+"badges": []
+},
+"bgwiki": {
+"site": "bgwiki",
+"title": "Периодично гладуване",
+"badges": []
+},
+"bnwiki": {
+"site": "bnwiki",
+"title": "সবিরাম উপবাস",
+"badges": []
+},
 "cswiki": {
 "site": "cswiki",
 "title": "Přerušovaný půst",
+"badges": []
+},
+"dawiki": {
+"site": "dawiki",
+"title": "Periodisk faste",
+"badges": []
+},
+"dewiki": {
+"site": "dewiki",
+"title": "Intermittierendes Fasten",
+"badges": []
+},
+"enwiki": {
+"site": "enwiki",
+"title": "Intermittent fasting",
+"badges": []
+},
+"eswiki": {
+"site": "eswiki",
+"title": "Ayuno intermitente",
+"badges": []
+},
+"euwiki": {
+"site": "euwiki",
+"title": "Aldizkako barau",
+"badges": []
+},
+"fawiki": {
+"site": "fawiki",
+"title": "روزه‌گیری مقطعی",
+"badges": []
+},
+"fiwiki": {
+"site": "fiwiki",
+"title": "Pätkäpaasto",
+"badges": []
+},
+"frwiki": {
+"site": "frwiki",
+"title": "Jeûne intermittent",
+"badges": []
+},
+"hewiki": {
+"site": "hewiki",
+"title": "צום לסירוגין",
+"badges": []
+},
+"hiwiki": {
+"site": "hiwiki",
+"title": "आंतरायिक उपवास",
+"badges": []
+},
+"huwiki": {
+"site": "huwiki",
+"title": "Időszakos böjt",
+"badges": []
+},
+"idwiki": {
+"site": "idwiki",
+"title": "Puasa intermiten",
+"badges": []
+},
+"itwiki": {
+"site": "itwiki",
+"title": "Digiuno intermittente",
+"badges": []
+},
+"jawiki": {
+"site": "jawiki",
+"title": "断続的断食",
+"badges": []
+},
+"kowiki": {
+"site": "kowiki",
+"title": "간헐적 단식",
+"badges": []
+},
+"mrwiki": {
+"site": "mrwiki",
+"title": "असंतत उपवास",
+"badges": []
+},
+"mswiki": {
+"site": "mswiki",
+"title": "Puasa berkala",
+"badges": []
+},
+"rowiki": {
+"site": "rowiki",
+"title": "Post intermitent",
+"badges": []
+},
+"ruwiki": {
+"site": "ruwiki",
+"title": "Периодическое голодание",
+"badges": []
+},
+"slwiki": {
+"site": "slwiki",
+"title": "Prekinitveni post",
+"badges": []
+},
+"sqwiki": {
+"site": "sqwiki",
+"title": "Agjërimi me ndërprerje",
+"badges": []
+},
+"thwiki": {
+"site": "thwiki",
+"title": "การอดอาหารเป็นพัก ๆ",
+"badges": []
+},
+"ukwiki": {
+"site": "ukwiki",
+"title": "Інтервальне голодування",
+"badges": []
+},
+"viwiki": {
+"site": "viwiki",
+"title": "Nhịn ăn gián đoạn",
+"badges": []
+},
+"xhwiki": {
+"site": "xhwiki",
+"title": "Intermitent fasting",
+"badges": []
+},
+"zhwiki": {
+"site": "zhwiki",
+"title": "間歇性斷食",
 "badges": []
 }
 }
@@ -1150,14 +1300,641 @@
 }
 },
 "sitelinks": {
+"arcwiki": {
+"site": "arcwiki",
+"title": "ܨܘܡܐ",
+"badges": []
+},
+"arwiki": {
+"site": "arwiki",
+"title": "صوم",
+"badges": []
+},
+"arzwiki": {
+"site": "arzwiki",
+"title": "صيام",
+"badges": []
+},
+"astwiki": {
+"site": "astwiki",
+"title": "Ayunu",
+"badges": []
+},
+"azbwiki": {
+"site": "azbwiki",
+"title": "اوروج",
+"badges": []
+},
+"azwikiquote": {
+"site": "azwikiquote",
+"title": "Oruc",
+"badges": []
+},
+"bat_smgwiki": {
+"site": "bat_smgwiki",
+"title": "Pasninks",
+"badges": []
+},
+"bawiki": {
+"site": "bawiki",
+"title": "Ризыҡланыу әҙәбе",
+"badges": []
+},
+"be_x_oldwiki": {
+"site": "be_x_oldwiki",
+"title": "Пост",
+"badges": []
+},
+"bewiki": {
+"site": "bewiki",
+"title": "Пост (рэлігія)",
+"badges": []
+},
+"bgwiki": {
+"site": "bgwiki",
+"title": "Пост (въздържание)",
+"badges": []
+},
+"bnwiki": {
+"site": "bnwiki",
+"title": "উপবাস",
+"badges": []
+},
+"bnwikiquote": {
+"site": "bnwikiquote",
+"title": "উপবাস",
+"badges": []
+},
+"bswiki": {
+"site": "bswiki",
+"title": "Post",
+"badges": []
+},
+"cawiki": {
+"site": "cawiki",
+"title": "Dejuni",
+"badges": []
+},
+"ckbwiki": {
+"site": "ckbwiki",
+"title": "ڕۆژوو",
+"badges": []
+},
+"crhwiki": {
+"site": "crhwiki",
+"title": "Oraza",
+"badges": []
+},
+"csbwiki": {
+"site": "csbwiki",
+"title": "Pòst",
+"badges": []
+},
 "cswiki": {
 "site": "cswiki",
 "title": "Půst",
 "badges": []
 },
+"cswikiquote": {
+"site": "cswikiquote",
+"title": "Půst",
+"badges": []
+},
+"cvwiki": {
+"site": "cvwiki",
+"title": "Тип тытни",
+"badges": []
+},
+"dawiki": {
+"site": "dawiki",
+"title": "Faste",
+"badges": []
+},
+"dewiki": {
+"site": "dewiki",
+"title": "Fasten",
+"badges": []
+},
+"dewikiquote": {
+"site": "dewikiquote",
+"title": "Fasten",
+"badges": []
+},
+"diqwiki": {
+"site": "diqwiki",
+"title": "Roce (din)",
+"badges": []
+},
+"elwiki": {
+"site": "elwiki",
+"title": "Νηστεία",
+"badges": []
+},
+"elwikiquote": {
+"site": "elwikiquote",
+"title": "Νηστεία",
+"badges": []
+},
+"enwiki": {
+"site": "enwiki",
+"title": "Fasting",
+"badges": []
+},
+"enwikiquote": {
+"site": "enwikiquote",
+"title": "Fasting",
+"badges": []
+},
+"enwikisource": {
+"site": "enwikisource",
+"title": "Portal:Fasting",
+"badges": []
+},
+"eowiki": {
+"site": "eowiki",
+"title": "Fasto",
+"badges": []
+},
+"eowikiquote": {
+"site": "eowikiquote",
+"title": "Fasto",
+"badges": []
+},
+"eswiki": {
+"site": "eswiki",
+"title": "Ayuno",
+"badges": []
+},
+"etwiki": {
+"site": "etwiki",
+"title": "Paast",
+"badges": []
+},
+"etwikiquote": {
+"site": "etwikiquote",
+"title": "Paast",
+"badges": []
+},
+"euwiki": {
+"site": "euwiki",
+"title": "Barau",
+"badges": []
+},
+"fawiki": {
+"site": "fawiki",
+"title": "روزه",
+"badges": []
+},
+"fawikiquote": {
+"site": "fawikiquote",
+"title": "روزه",
+"badges": []
+},
+"fiwiki": {
+"site": "fiwiki",
+"title": "Paasto",
+"badges": []
+},
+"frwiki": {
+"site": "frwiki",
+"title": "Jeûne",
+"badges": []
+},
+"frwikiquote": {
+"site": "frwikiquote",
+"title": "Jeûne",
+"badges": []
+},
+"gawiki": {
+"site": "gawiki",
+"title": "Troscadh",
+"badges": []
+},
+"gdwiki": {
+"site": "gdwiki",
+"title": "Aoine",
+"badges": []
+},
+"glwiki": {
+"site": "glwiki",
+"title": "Xaxún",
+"badges": []
+},
+"gomwiki": {
+"site": "gomwiki",
+"title": "Upas",
+"badges": []
+},
+"gorwiki": {
+"site": "gorwiki",
+"title": "Puasa",
+"badges": []
+},
+"hawiki": {
+"site": "hawiki",
+"title": "Azumi",
+"badges": []
+},
+"hewiki": {
+"site": "hewiki",
+"title": "צום",
+"badges": []
+},
+"hiwiki": {
+"site": "hiwiki",
+"title": "उपवास",
+"badges": []
+},
+"hiwikiquote": {
+"site": "hiwikiquote",
+"title": "उपवास",
+"badges": []
+},
+"hrwiki": {
+"site": "hrwiki",
+"title": "Post",
+"badges": []
+},
+"huwiki": {
+"site": "huwiki",
+"title": "Böjt",
+"badges": []
+},
+"huwikiquote": {
+"site": "huwikiquote",
+"title": "Böjt",
+"badges": []
+},
+"hywiki": {
+"site": "hywiki",
+"title": "Պահք",
+"badges": []
+},
+"hywwiki": {
+"site": "hywwiki",
+"title": "Պահք",
+"badges": []
+},
+"idwiki": {
+"site": "idwiki",
+"title": "Puasa",
+"badges": []
+},
+"iswiki": {
+"site": "iswiki",
+"title": "Fasta",
+"badges": []
+},
+"itwiki": {
+"site": "itwiki",
+"title": "Digiuno",
+"badges": []
+},
+"itwikiquote": {
+"site": "itwikiquote",
+"title": "Digiuno",
+"badges": []
+},
+"jawiki": {
+"site": "jawiki",
+"title": "断食",
+"badges": []
+},
+"jvwiki": {
+"site": "jvwiki",
+"title": "Puasa",
+"badges": [
+"Q70893996"
+]
+},
+"kawiki": {
+"site": "kawiki",
+"title": "მარხვა",
+"badges": []
+},
+"kgewiki": {
+"site": "kgewiki",
+"title": "Puasa",
+"badges": []
+},
+"kkwiki": {
+"site": "kkwiki",
+"title": "Ашығу",
+"badges": []
+},
+"knwiki": {
+"site": "knwiki",
+"title": "ಉಪವಾಸ",
+"badges": []
+},
+"kowiki": {
+"site": "kowiki",
+"title": "단식",
+"badges": []
+},
+"kuwiki": {
+"site": "kuwiki",
+"title": "Rojî",
+"badges": []
+},
+"lawiki": {
+"site": "lawiki",
+"title": "Ieiunium",
+"badges": []
+},
+"lbwiki": {
+"site": "lbwiki",
+"title": "Faaschten",
+"badges": []
+},
+"lijwiki": {
+"site": "lijwiki",
+"title": "Zazun",
+"badges": []
+},
+"liwiki": {
+"site": "liwiki",
+"title": "Vaste",
+"badges": []
+},
+"ltwiki": {
+"site": "ltwiki",
+"title": "Pasninkas",
+"badges": []
+},
+"lvwiki": {
+"site": "lvwiki",
+"title": "Gavēšana",
+"badges": []
+},
+"madwiki": {
+"site": "madwiki",
+"title": "Pasa",
+"badges": []
+},
+"mgwiki": {
+"site": "mgwiki",
+"title": "Fifadian-kanina",
+"badges": []
+},
+"minwiki": {
+"site": "minwiki",
+"title": "Puaso",
+"badges": []
+},
+"mkwiki": {
+"site": "mkwiki",
+"title": "Пост",
+"badges": []
+},
+"mlwiki": {
+"site": "mlwiki",
+"title": "ഉപവാസം",
+"badges": []
+},
+"mrwiki": {
+"site": "mrwiki",
+"title": "उपवास",
+"badges": []
+},
+"mswiki": {
+"site": "mswiki",
+"title": "Puasa",
+"badges": []
+},
+"mznwiki": {
+"site": "mznwiki",
+"title": "روجه",
+"badges": []
+},
+"newiki": {
+"site": "newiki",
+"title": "उपवास",
+"badges": []
+},
+"nlwiki": {
+"site": "nlwiki",
+"title": "Vasten",
+"badges": []
+},
+"nnwiki": {
+"site": "nnwiki",
+"title": "Faste",
+"badges": []
+},
+"nowiki": {
+"site": "nowiki",
+"title": "Faste",
+"badges": []
+},
+"ocwiki": {
+"site": "ocwiki",
+"title": "June",
+"badges": []
+},
+"orwiki": {
+"site": "orwiki",
+"title": "ଉପବାସ",
+"badges": []
+},
 "plwiki": {
 "site": "plwiki",
 "title": "Post",
+"badges": []
+},
+"plwikiquote": {
+"site": "plwikiquote",
+"title": "Post",
+"badges": []
+},
+"pnbwiki": {
+"site": "pnbwiki",
+"title": "روزہ",
+"badges": []
+},
+"ptwiki": {
+"site": "ptwiki",
+"title": "Jejum",
+"badges": []
+},
+"ptwikiquote": {
+"site": "ptwikiquote",
+"title": "Jejum",
+"badges": []
+},
+"rowiki": {
+"site": "rowiki",
+"title": "Post",
+"badges": []
+},
+"rskwiki": {
+"site": "rskwiki",
+"title": "Пост",
+"badges": []
+},
+"ruewiki": {
+"site": "ruewiki",
+"title": "Говіня",
+"badges": []
+},
+"ruwiki": {
+"site": "ruwiki",
+"title": "Пост (религия)",
+"badges": []
+},
+"ruwikiquote": {
+"site": "ruwikiquote",
+"title": "Пост (религия)",
+"badges": []
+},
+"scnwiki": {
+"site": "scnwiki",
+"title": "Dijunu",
+"badges": []
+},
+"sdwiki": {
+"site": "sdwiki",
+"title": "روزا",
+"badges": []
+},
+"shwiki": {
+"site": "shwiki",
+"title": "Post",
+"badges": []
+},
+"simplewiki": {
+"site": "simplewiki",
+"title": "Fasting",
+"badges": []
+},
+"skwiki": {
+"site": "skwiki",
+"title": "Pôst",
+"badges": []
+},
+"skwikiquote": {
+"site": "skwikiquote",
+"title": "Pôst",
+"badges": []
+},
+"slwiki": {
+"site": "slwiki",
+"title": "Postenje",
+"badges": []
+},
+"slwikiquote": {
+"site": "slwikiquote",
+"title": "Post",
+"badges": []
+},
+"sqwiki": {
+"site": "sqwiki",
+"title": "Agjërimi",
+"badges": []
+},
+"srwiki": {
+"site": "srwiki",
+"title": "Пост",
+"badges": []
+},
+"suwiki": {
+"site": "suwiki",
+"title": "Puasa",
+"badges": []
+},
+"svwiki": {
+"site": "svwiki",
+"title": "Fasta",
+"badges": []
+},
+"swwiki": {
+"site": "swwiki",
+"title": "Saumu",
+"badges": []
+},
+"tawiki": {
+"site": "tawiki",
+"title": "நோன்பு",
+"badges": []
+},
+"tewiki": {
+"site": "tewiki",
+"title": "ఉపవాసం",
+"badges": []
+},
+"thwiki": {
+"site": "thwiki",
+"title": "การอดอาหาร",
+"badges": []
+},
+"tkwiki": {
+"site": "tkwiki",
+"title": "Oraza",
+"badges": []
+},
+"tlwiki": {
+"site": "tlwiki",
+"title": "Ayuno",
+"badges": []
+},
+"trwiki": {
+"site": "trwiki",
+"title": "Oruç",
+"badges": []
+},
+"trwikiquote": {
+"site": "trwikiquote",
+"title": "Oruç",
+"badges": []
+},
+"ukwiki": {
+"site": "ukwiki",
+"title": "Піст",
+"badges": []
+},
+"ukwikiquote": {
+"site": "ukwikiquote",
+"title": "Піст",
+"badges": []
+},
+"urwiki": {
+"site": "urwiki",
+"title": "روزہ",
+"badges": []
+},
+"vewiki": {
+"site": "vewiki",
+"title": "U ḓidzima zwiḽiwa",
+"badges": []
+},
+"viwiki": {
+"site": "viwiki",
+"title": "Nhịn ăn",
+"badges": []
+},
+"wawiki": {
+"site": "wawiki",
+"title": "Djune",
+"badges": []
+},
+"wuuwiki": {
+"site": "wuuwiki",
+"title": "禁食",
+"badges": []
+},
+"xmfwiki": {
+"site": "xmfwiki",
+"title": "პიჩვანი",
+"badges": []
+},
+"zh_yuewiki": {
+"site": "zh_yuewiki",
+"title": "禁食",
+"badges": []
+},
+"zhwiki": {
+"site": "zhwiki",
+"title": "禁食",
 "badges": []
 }
 }
@@ -1177,14 +1954,85 @@
 "value": "British journalist, producer and presenter (1957–2024)"
 }
 },
-"sitelinks": {}
+"sitelinks": {
+"arwiki": {
+"site": "arwiki",
+"title": "مايكل موسلي (مذيع)",
+"badges": []
+},
+"arzwiki": {
+"site": "arzwiki",
+"title": "مايكل موسلى",
+"badges": []
+},
+"commonswiki": {
+"site": "commonswiki",
+"title": "Category:Michael Mosley (broadcaster)",
+"badges": []
+},
+"cywiki": {
+"site": "cywiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"dewiki": {
+"site": "dewiki",
+"title": "Michael Mosley (Fernsehmoderator)",
+"badges": []
+},
+"enwiki": {
+"site": "enwiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"eswiki": {
+"site": "eswiki",
+"title": "Michael Mosley (locutor)",
+"badges": []
+},
+"fawiki": {
+"site": "fawiki",
+"title": "مایکل موزلی (گوینده)",
+"badges": []
+},
+"fiwiki": {
+"site": "fiwiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"hawiki": {
+"site": "hawiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"hewiki": {
+"site": "hewiki",
+"title": "מייקל מוסלי",
+"badges": []
+},
+"nowiki": {
+"site": "nowiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"svwiki": {
+"site": "svwiki",
+"title": "Michael Mosley",
+"badges": []
+},
+"zhwiki": {
+"site": "zhwiki",
+"title": "迈克尔·J·莫斯利",
+"badges": []
+}
+}
 }
 },
 "success": 1
 }
 },
 {
-"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254&props=labels%7Cdescriptions%7Csitelinks&languages=pl%7Ccs%7Cen&sitefilter=plwiki%7Ccswiki",
+"url": "https://www.wikidata.org/w/api.php?format=json&formatversion=2&action=wbgetentities&ids=Q1666254&props=labels%7Cdescriptions%7Csitelinks&languages=en",
 "status": 200,
 "body": {
 "entities": {
@@ -1195,10 +2043,6 @@
 "en": {
 "language": "en",
 "value": "intermittent fasting"
-},
-"cs": {
-"language": "cs",
-"value": "Přerušovaný půst"
 }
 },
 "descriptions": {
@@ -1208,9 +2052,159 @@
 }
 },
 "sitelinks": {
+"arwiki": {
+"site": "arwiki",
+"title": "صوم متقطع",
+"badges": []
+},
+"astwiki": {
+"site": "astwiki",
+"title": "Ayunu intermitente",
+"badges": []
+},
+"bgwiki": {
+"site": "bgwiki",
+"title": "Периодично гладуване",
+"badges": []
+},
+"bnwiki": {
+"site": "bnwiki",
+"title": "সবিরাম উপবাস",
+"badges": []
+},
 "cswiki": {
 "site": "cswiki",
 "title": "Přerušovaný půst",
+"badges": []
+},
+"dawiki": {
+"site": "dawiki",
+"title": "Periodisk faste",
+"badges": []
+},
+"dewiki": {
+"site": "dewiki",
+"title": "Intermittierendes Fasten",
+"badges": []
+},
+"enwiki": {
+"site": "enwiki",
+"title": "Intermittent fasting",
+"badges": []
+},
+"eswiki": {
+"site": "eswiki",
+"title": "Ayuno intermitente",
+"badges": []
+},
+"euwiki": {
+"site": "euwiki",
+"title": "Aldizkako barau",
+"badges": []
+},
+"fawiki": {
+"site": "fawiki",
+"title": "روزه‌گیری مقطعی",
+"badges": []
+},
+"fiwiki": {
+"site": "fiwiki",
+"title": "Pätkäpaasto",
+"badges": []
+},
+"frwiki": {
+"site": "frwiki",
+"title": "Jeûne intermittent",
+"badges": []
+},
+"hewiki": {
+"site": "hewiki",
+"title": "צום לסירוגין",
+"badges": []
+},
+"hiwiki": {
+"site": "hiwiki",
+"title": "आंतरायिक उपवास",
+"badges": []
+},
+"huwiki": {
+"site": "huwiki",
+"title": "Időszakos böjt",
+"badges": []
+},
+"idwiki": {
+"site": "idwiki",
+"title": "Puasa intermiten",
+"badges": []
+},
+"itwiki": {
+"site": "itwiki",
+"title": "Digiuno intermittente",
+"badges": []
+},
+"jawiki": {
+"site": "jawiki",
+"title": "断続的断食",
+"badges": []
+},
+"kowiki": {
+"site": "kowiki",
+"title": "간헐적 단식",
+"badges": []
+},
+"mrwiki": {
+"site": "mrwiki",
+"title": "असंतत उपवास",
+"badges": []
+},
+"mswiki": {
+"site": "mswiki",
+"title": "Puasa berkala",
+"badges": []
+},
+"rowiki": {
+"site": "rowiki",
+"title": "Post intermitent",
+"badges": []
+},
+"ruwiki": {
+"site": "ruwiki",
+"title": "Периодическое голодание",
+"badges": []
+},
+"slwiki": {
+"site": "slwiki",
+"title": "Prekinitveni post",
+"badges": []
+},
+"sqwiki": {
+"site": "sqwiki",
+"title": "Agjërimi me ndërprerje",
+"badges": []
+},
+"thwiki": {
+"site": "thwiki",
+"title": "การอดอาหารเป็นพัก ๆ",
+"badges": []
+},
+"ukwiki": {
+"site": "ukwiki",
+"title": "Інтервальне голодування",
+"badges": []
+},
+"viwiki": {
+"site": "viwiki",
+"title": "Nhịn ăn gián đoạn",
+"badges": []
+},
+"xhwiki": {
+"site": "xhwiki",
+"title": "Intermitent fasting",
+"badges": []
+},
+"zhwiki": {
+"site": "zhwiki",
+"title": "間歇性斷食",
 "badges": []
 }
 }

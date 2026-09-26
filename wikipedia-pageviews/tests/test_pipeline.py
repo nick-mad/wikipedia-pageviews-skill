@@ -103,3 +103,15 @@ def test_correct_derived_comparisons_pass_wrong_ones_fail(offline_client):
     assert report.unverified(right, known) == []
     assert report.unverified(wrong, known) != []
     assert report.unverified("see `/tmp/x-144b-4710/report.pdf`", known) == []
+    assert report.unverified("saved to /tmp/x-144b-4710/report.pdf", known) == []
+    assert report.unverified("wpv-output/x-777/report.pdf", known) == []
+    assert report.unverified("13,994/mo", known) == ["13,994"]  # prose, not a path
+
+
+def test_csv_export(offline_client, tmp_path):
+    import csv
+    a = build(offline_client)
+    rows = list(csv.DictReader(open(analysis.write_csv(a, tmp_path / "t.csv"))))
+    assert len(rows) == 48  # 24 months x 2 languages
+    assert rows[0]["period"] == "2024-09" and rows[0]["lang"] == "pl"
+    assert float(rows[0]["views_per_million"]) > 0

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated": "2026-09-24T19:13:54",
+ "generated": "2026-09-26T16:22:02",
  "params": {
   "topics": [
    {
@@ -36,7 +36,7 @@
  },
  "entities": {
   "Q108458": {
-   "label": "瞑想",
+   "label": "meditation",
    "description": "mental practice of focus on a particular object, thought or activity",
    "sitelinks": {
     "ja": "瞑想",
@@ -44,8 +44,8 @@
    }
   },
   "Q341045": {
-   "label": "マインドフルネス",
-   "description": "人の行為の一つ",
+   "label": "mindfulness",
+   "description": "attention to experiences occurring in the present moment",
    "sitelinks": {
     "ja": "マインドフルネス",
     "ko": "마음챙김"
@@ -100,6 +100,14 @@
     "median_views": 3768.0,
     "median_per_million": 4.246390920885664,
     "growth_pct_per_year": -38.2555054398767,
+    "growth_ci_pct_per_year": [
+     -44.67077589676672,
+     -30.538738868346826
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -43.649547575100215,
+     -32.82509403469408
+    ],
     "growth_pct_per_year_despiked": -38.2555054398767,
     "raw_growth_pct_per_year": -40.18931440823968,
     "recent_vs_prior_pct": -38.203991459267826,
@@ -138,6 +146,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -146,7 +155,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p<0.001)",
+      "+ trend statistically significant (p<0.001; 95% CI [-44.7%; -30.5%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 3,768 views/month)"
@@ -253,6 +262,14 @@
     "median_views": 908.5,
     "median_per_million": 12.311450820721298,
     "growth_pct_per_year": -45.44118197353366,
+    "growth_ci_pct_per_year": [
+     -67.1229381301465,
+     -3.9027460186785046
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -60.73371744540674,
+     -20.378277364019926
+    ],
     "growth_pct_per_year_despiked": -45.44118197353366,
     "raw_growth_pct_per_year": -57.91615496996957,
     "recent_vs_prior_pct": -30.13512439629078,
@@ -291,6 +308,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -299,7 +317,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p=0.037)",
+      "+ trend statistically significant (p=0.037; 95% CI [-67.1%; -3.9%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "~ modest volume (median 908 views/month)"
@@ -406,6 +424,14 @@
     "median_views": 4422.0,
     "median_per_million": 4.744641742356444,
     "growth_pct_per_year": -46.237961380736856,
+    "growth_ci_pct_per_year": [
+     -52.42125813318835,
+     -39.346098476365974
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -50.32039450659078,
+     -40.792882576241354
+    ],
     "growth_pct_per_year_despiked": -46.237961380736856,
     "raw_growth_pct_per_year": -48.33518408343286,
     "recent_vs_prior_pct": -48.425815696848474,
@@ -444,6 +470,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -452,7 +479,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p<0.001)",
+      "+ trend statistically significant (p<0.001; 95% CI [-52.4%; -39.3%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 4,422 views/month)"
@@ -559,6 +586,14 @@
     "median_views": 666.0,
     "median_per_million": 11.23858581853317,
     "growth_pct_per_year": -11.282097919035595,
+    "growth_ci_pct_per_year": [
+     -37.61339697501555,
+     38.003197859468244
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -29.734437766389586,
+     21.67612967213892
+    ],
     "growth_pct_per_year_despiked": -11.282097919035595,
     "raw_growth_pct_per_year": -28.864723707941632,
     "recent_vs_prior_pct": 4.124043551245982,
@@ -597,6 +632,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "unclear",
     "verdict_despiked": "unclear",
     "confidence": {

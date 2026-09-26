@@ -23,7 +23,8 @@ def mann_kendall(y: np.ndarray, slope: float | None = None) -> dict:
     y = np.asarray(y, dtype=float)
     n = len(y)
     if n < 4:
-        return {"s": 0, "z": 0.0, "p": 1.0, "p_raw": 1.0, "autocorr_lag1": None}
+        return {"s": 0, "z": 0.0, "p": 1.0, "p_raw": 1.0, "autocorr_lag1": None,
+                "var": 0.0, "var_corrected": 0.0}
     diff = y[None, :] - y[:, None]
     s = int(np.sign(diff[np.triu_indices(n, 1)]).sum())
     _, counts = np.unique(y, return_counts=True)
@@ -51,7 +52,24 @@ def mann_kendall(y: np.ndarray, slope: float | None = None) -> dict:
     z = z_of(var * factor)
     p = math.erfc(abs(z) / math.sqrt(2))
     return {"s": s, "z": round(z, 3), "p": p, "p_raw": p_raw,
-            "autocorr_lag1": round(r1, 3), "variance_factor": round(factor, 3)}
+            "autocorr_lag1": round(r1, 3), "variance_factor": round(factor, 3),
+            "var": var, "var_corrected": var * factor}
+
+
+def sen_ci(y: np.ndarray, var_s: float, z: float = 1.959964) -> tuple[float, float]:
+    """Confidence interval of Sen's slope (Sen 1968; same rank rule as
+    scipy.stats.theilslopes). `var_s` = variance of the Mann-Kendall S, so
+    passing the autocorrelation-corrected variance widens the interval."""
+    y = np.asarray(y, dtype=float)
+    n = len(y)
+    if n < 3 or var_s <= 0:
+        return float("nan"), float("nan")
+    i, j = np.triu_indices(n, 1)
+    slopes = np.sort((y[j] - y[i]) / (j - i))
+    c = z * math.sqrt(var_s)
+    lo = int(np.clip(round((len(slopes) - c) / 2) - 1, 0, len(slopes) - 1))
+    hi = int(np.clip(round((len(slopes) + c) / 2), 0, len(slopes) - 1))
+    return float(slopes[lo]), float(slopes[hi])
 
 
 def sen_slope(y: np.ndarray) -> tuple[float, float]:
@@ -151,7 +169,8 @@ def confidence(m: dict, granularity: str) -> dict:
     if v in ("growing", "declining"):
         if p < 0.05:
             score += 1
-            reasons.append(f"+ trend statistically significant ({fmt_p(p)})")
+            reasons.append(f"+ trend statistically significant ({fmt_p(p)}; "
+                           f"95% CI {fmt_ci(m['growth_ci_pct_per_year'])} excludes 0)")
         else:
             score += 0.5
             reasons.append(f"~ trend only marginally significant ({fmt_p(p)})")
@@ -194,6 +213,14 @@ def confidence(m: dict, granularity: str) -> dict:
         cap = "low"
         reasons.append(f"- low volume (median {med:,.0f} views/{_unit(granularity)}): noisy")
 
+    gaps = m.get("zero_points", 0)
+    if gaps:
+        share_gaps = gaps / n
+        reasons.append(f"{'-' if share_gaps > 0.2 else '~'} {gaps} of {n} "
+                       f"{_unit(granularity)}s have no recorded views "
+                       "(either no readers or missing data)")
+        if share_gaps > 0.2:
+            cap = "low"
     if cap is None and n < (12 if granularity == "monthly" else 365):
         cap = "medium"
         reasons.append("- less than a year of data: seasonality cannot be separated from "
@@ -202,6 +229,13 @@ def confidence(m: dict, granularity: str) -> dict:
     if cap == "low" or (cap == "medium" and level == "high"):
         level = cap
     return {"level": level, "score": score, "max_score": 5, "reasons": reasons}
+
+
+def fmt_ci(ci) -> str:
+    lo, hi = ci
+    if lo is None or hi is None or math.isnan(lo) or math.isnan(hi):
+        return "n/a"
+    return f"[{lo:+.1f}%; {hi:+.1f}%]/yr"
 
 
 def fmt_p(p: float) -> str:
@@ -241,6 +275,9 @@ def describe(views: np.ndarray, share: np.ndarray, granularity: str,
     mk = mann_kendall(safe_log(share), slope_log)
     mk_clean = mann_kendall(safe_log(clean))
     growth = annual_growth(share, steps)
+    to_pct = lambda b: (math.exp(b * steps) - 1) * 100  # noqa: E731
+    ci = sen_ci(safe_log(share), mk["var_corrected"])
+    ci_raw = sen_ci(safe_log(share), mk["var"])
     growth_clean = annual_growth(clean, steps)
     rvp, win = recent_vs_prior(share, window)
     rvp_clean, _ = recent_vs_prior(clean, window)
@@ -256,6 +293,8 @@ def describe(views: np.ndarray, share: np.ndarray, granularity: str,
         "median_views": float(np.median(views)),
         "median_per_million": float(np.median(share)),
         "growth_pct_per_year": growth,
+        "growth_ci_pct_per_year": [to_pct(ci[0]), to_pct(ci[1])],
+        "growth_ci_pct_per_year_uncorrected": [to_pct(ci_raw[0]), to_pct(ci_raw[1])],
         "growth_pct_per_year_despiked": growth_clean,
         "raw_growth_pct_per_year": annual_growth(views, steps),
         "recent_vs_prior_pct": rvp,
@@ -269,6 +308,7 @@ def describe(views: np.ndarray, share: np.ndarray, granularity: str,
         "spike_mask": spikes.tolist(),
         "seasonal_peak_months": seasonal_months,
         "spike_share_pct": (excess / total * 100) if total > 0 else 0.0,
+        "zero_points": int((views == 0).sum()),
     }
     m["verdict"] = verdict(mk["p"], growth, rvp)
     m["verdict_despiked"] = verdict(mk_clean["p"], growth_clean, rvp_clean)

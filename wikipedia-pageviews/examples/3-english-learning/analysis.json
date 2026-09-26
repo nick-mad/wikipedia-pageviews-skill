@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generated": "2026-09-24T19:12:31",
+ "generated": "2026-09-26T16:21:22",
  "params": {
   "topics": [
    {
-    "label": "English",
+    "label": "Англійська мова",
     "qids": [
      "Q1860"
     ],
@@ -25,15 +25,15 @@
   "agent": "user",
   "include_redirects": true,
   "weights": {
-   "growth": 0.4,
-   "volume": 0.4,
+   "growth": 0.5,
+   "volume": 0.3,
    "trust": 0.2
   }
  },
  "entities": {
   "Q1860": {
-   "label": "англійська мова",
-   "description": "західногерманська мова, яка виникла в Англії",
+   "label": "English",
+   "description": "West Germanic language",
    "sitelinks": {
     "uk": "Англійська мова",
     "pl": "Język angielski",
@@ -71,8 +71,8 @@
  ],
  "series": [
   {
-   "id": "English [uk]",
-   "topic": "English",
+   "id": "Англійська мова [uk]",
+   "topic": "Англійська мова",
    "lang": "uk",
    "articles": [
     {
@@ -91,6 +91,14 @@
     "median_views": 7478.0,
     "median_per_million": 124.45271632458503,
     "growth_pct_per_year": -15.968174547125201,
+    "growth_ci_pct_per_year": [
+     -20.620823647527452,
+     -10.296021439539228
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -20.278640850546946,
+     -10.99367603858692
+    ],
     "growth_pct_per_year_despiked": -15.968174547125201,
     "raw_growth_pct_per_year": -37.455944599364024,
     "recent_vs_prior_pct": -13.534453211715935,
@@ -129,6 +137,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -137,7 +146,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p<0.001)",
+      "+ trend statistically significant (p<0.001; 95% CI [-20.6%; -10.3%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 7,478 views/month)"
@@ -224,8 +233,8 @@
    ]
   },
   {
-   "id": "English [pl]",
-   "topic": "English",
+   "id": "Англійська мова [pl]",
+   "topic": "Англійська мова",
    "lang": "pl",
    "articles": [
     {
@@ -244,6 +253,14 @@
     "median_views": 8617.0,
     "median_per_million": 44.89897829907231,
     "growth_pct_per_year": -9.7459404138729,
+    "growth_ci_pct_per_year": [
+     -14.588343432934458,
+     -5.826905743500843
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -14.357030316995411,
+     -6.055257758429066
+    ],
     "growth_pct_per_year_despiked": -9.7459404138729,
     "raw_growth_pct_per_year": -18.766649125180955,
     "recent_vs_prior_pct": -9.77031715150305,
@@ -282,6 +299,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -290,7 +308,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p=0.001)",
+      "+ trend statistically significant (p=0.001; 95% CI [-14.6%; -5.8%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 8,617 views/month)"
@@ -377,8 +395,8 @@
    ]
   },
   {
-   "id": "English [tr]",
-   "topic": "English",
+   "id": "Англійська мова [tr]",
+   "topic": "Англійська мова",
    "lang": "tr",
    "articles": [
     {
@@ -397,6 +415,14 @@
     "median_views": 7701.0,
     "median_per_million": 63.65471226867422,
     "growth_pct_per_year": -4.722447798437135,
+    "growth_ci_pct_per_year": [
+     -20.204541346605055,
+     11.523666120700371
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -13.801583375676685,
+     6.622214970286944
+    ],
     "growth_pct_per_year_despiked": -3.7490413846662074,
     "raw_growth_pct_per_year": -20.99798593817681,
     "recent_vs_prior_pct": 0.8818511637883386,
@@ -435,6 +461,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 2.6496212542493485,
+    "zero_points": 0,
     "verdict": "flat",
     "verdict_despiked": "flat",
     "confidence": {
@@ -530,8 +557,8 @@
    ]
   },
   {
-   "id": "English [vi]",
-   "topic": "English",
+   "id": "Англійська мова [vi]",
+   "topic": "Англійська мова",
    "lang": "vi",
    "articles": [
     {
@@ -550,6 +577,14 @@
     "median_views": 14663.0,
     "median_per_million": 257.7288737484298,
     "growth_pct_per_year": -4.863652653883577,
+    "growth_ci_pct_per_year": [
+     -19.795046581812016,
+     17.860564553568015
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -16.282589810550263,
+     10.145082476997946
+    ],
     "growth_pct_per_year_despiked": -4.863652653883577,
     "raw_growth_pct_per_year": -28.476085758046445,
     "recent_vs_prior_pct": 2.340242972462092,
@@ -588,6 +623,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "flat",
     "verdict_despiked": "flat",
     "confidence": {
@@ -683,8 +719,8 @@
    ]
   },
   {
-   "id": "English [id]",
-   "topic": "English",
+   "id": "Англійська мова [id]",
+   "topic": "Англійська мова",
    "lang": "id",
    "articles": [
     {
@@ -703,6 +739,14 @@
     "median_views": 17246.0,
     "median_per_million": 197.6316385666305,
     "growth_pct_per_year": -23.992982154534527,
+    "growth_ci_pct_per_year": [
+     -33.73419306901933,
+     -13.60903682984258
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -30.949747729877142,
+     -16.288168845689952
+    ],
     "growth_pct_per_year_despiked": -23.992982154534527,
     "raw_growth_pct_per_year": -49.86244677200866,
     "recent_vs_prior_pct": -19.981394213581204,
@@ -741,6 +785,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -749,7 +794,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p=0.002)",
+      "+ trend statistically significant (p=0.002; 95% CI [-33.7%; -13.6%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 17,246 views/month)"
@@ -838,8 +883,8 @@
  ],
  "ranking": [
   {
-   "id": "English [vi]",
-   "score": 0.819,
+   "id": "Англійська мова [vi]",
+   "score": 0.838,
    "components": {
     "growth": 0.993,
     "volume": 0.806,
@@ -848,8 +893,8 @@
    "rank": 1
   },
   {
-   "id": "English [tr]",
-   "score": 0.514,
+   "id": "Англійська мова [tr]",
+   "score": 0.611,
    "components": {
     "growth": 1.0,
     "volume": 0.035,
@@ -858,28 +903,28 @@
    "rank": 2
   },
   {
-   "id": "English [id]",
-   "score": 0.5,
-   "components": {
-    "growth": 0.0,
-    "volume": 1.0,
-    "trust": 0.5
-   },
-   "rank": 3
-  },
-  {
-   "id": "English [pl]",
-   "score": 0.464,
+   "id": "Англійська мова [pl]",
+   "score": 0.521,
    "components": {
     "growth": 0.739,
     "volume": 0.17,
     "trust": 0.5
    },
+   "rank": 3
+  },
+  {
+   "id": "Англійська мова [id]",
+   "score": 0.4,
+   "components": {
+    "growth": 0.0,
+    "volume": 1.0,
+    "trust": 0.5
+   },
    "rank": 4
   },
   {
-   "id": "English [uk]",
-   "score": 0.267,
+   "id": "Англійська мова [uk]",
+   "score": 0.308,
    "components": {
     "growth": 0.416,
     "volume": 0.0,

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated": "2026-09-24T19:13:27",
+ "generated": "2026-09-26T16:21:59",
  "params": {
   "topics": [
    {
@@ -25,14 +25,14 @@
   "include_redirects": true,
   "weights": {
    "growth": 0.1,
-   "volume": 0.8,
-   "trust": 0.1
+   "volume": 0.7,
+   "trust": 0.2
   }
  },
  "entities": {
   "Q718": {
-   "label": "Schach",
-   "description": "Strategiespiel für zwei Personen",
+   "label": "chess",
+   "description": "strategy board game",
    "sitelinks": {
     "de": "Schach",
     "fr": "Échecs",
@@ -89,6 +89,14 @@
     "median_views": 14932.5,
     "median_per_million": 20.701819883450845,
     "growth_pct_per_year": -14.560610121782691,
+    "growth_ci_pct_per_year": [
+     -28.10234271549683,
+     -1.2210396459903294
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -22.966334712342494,
+     -6.530179667377878
+    ],
     "growth_pct_per_year_despiked": -14.560610121782691,
     "raw_growth_pct_per_year": -21.377728551103527,
     "recent_vs_prior_pct": -12.450712057526392,
@@ -127,6 +135,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -135,7 +144,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p=0.038)",
+      "+ trend statistically significant (p=0.038; 95% CI [-28.1%; -1.2%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ no news spikes distorting the series",
       "+ solid volume (median 14,932 views/month)"
@@ -242,6 +251,14 @@
     "median_views": 13993.5,
     "median_per_million": 22.613924330354045,
     "growth_pct_per_year": -16.165722978090493,
+    "growth_ci_pct_per_year": [
+     -31.2136831185277,
+     1.413023375533018
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -27.153644911087362,
+     -2.839512442681691
+    ],
     "growth_pct_per_year_despiked": -13.777589804776124,
     "raw_growth_pct_per_year": -26.509966597848067,
     "recent_vs_prior_pct": -24.992816900679827,
@@ -280,6 +297,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 6.357028535659808,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -395,6 +413,14 @@
     "median_views": 21862.5,
     "median_per_million": 39.348811617019464,
     "growth_pct_per_year": -21.719150572380542,
+    "growth_ci_pct_per_year": [
+     -30.31422240743551,
+     -7.199204450708185
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -27.932373787914166,
+     -10.524106125339483
+    ],
     "growth_pct_per_year_despiked": -19.07947467139023,
     "raw_growth_pct_per_year": -37.39241037417636,
     "recent_vs_prior_pct": -20.831450925196915,
@@ -433,6 +459,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 4.438490801099522,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -441,7 +468,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p=0.006)",
+      "+ trend statistically significant (p=0.006; 95% CI [-30.3%; -7.2%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ result holds without the 1 spike(s)",
       "+ solid volume (median 21,862 views/month)"
@@ -548,6 +575,14 @@
     "median_views": 8632.5,
     "median_per_million": 20.620977921672957,
     "growth_pct_per_year": -11.08898533779068,
+    "growth_ci_pct_per_year": [
+     -25.105609925430304,
+     0.6205156127167655
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -22.17690756032451,
+     -2.3771877700214383
+    ],
     "growth_pct_per_year_despiked": -11.08898533779068,
     "raw_growth_pct_per_year": -23.49293507802017,
     "recent_vs_prior_pct": -9.89795819368091,
@@ -586,6 +621,7 @@
     ],
     "seasonal_peak_months": [],
     "spike_share_pct": 0.0,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -694,7 +730,7 @@
   },
   {
    "id": "chess [de]",
-   "score": 0.639,
+   "score": 0.68,
    "components": {
     "growth": 0.673,
     "volume": 0.59,
@@ -704,7 +740,7 @@
   },
   {
    "id": "chess [fr]",
-   "score": 0.468,
+   "score": 0.416,
    "components": {
     "growth": 0.522,
     "volume": 0.52,

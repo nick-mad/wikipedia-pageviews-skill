@@ -83,14 +83,16 @@ def page_info(client: Client, lang: str, titles: list[str]) -> dict[str, dict]:
 
 def entities(client: Client, qids: list[str], langs: list[str],
              label_langs: list[str]) -> dict[str, dict]:
-    """qid -> {label, description, sitelinks: {lang: title|None}}."""
+    """qid -> {label, description, sitelinks: {lang: title|None}}.
+
+    All sitelinks are requested (no sitefilter), so the cached response is
+    reused when a follow-up question adds or changes languages."""
     if not qids:
         return {}
     data = _query(
-        client, WIKIDATA, action="wbgetentities", ids="|".join(qids),
+        client, WIKIDATA, action="wbgetentities", ids="|".join(sorted(qids)),
         props="labels|descriptions|sitelinks",
         languages="|".join(dict.fromkeys(label_langs + ["en"])),
-        sitefilter="|".join(site_id(l) for l in langs),
     )
     out = {}
     for qid, ent in data.get("entities", {}).items():

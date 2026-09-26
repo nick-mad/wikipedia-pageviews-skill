@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generated": "2026-09-24T19:19:05",
+ "generated": "2026-09-26T16:23:56",
  "params": {
   "topics": [
    {
-    "label": "Астрономія",
+    "label": "Astronomy",
     "qids": [
      "Q333"
     ],
@@ -28,8 +28,8 @@
  },
  "entities": {
   "Q333": {
-   "label": "астрономія",
-   "description": "одна з найдавніших наук, що включає спостереження і пояснення подій, які відбуваються за межами Землі та її атмосфери",
+   "label": "astronomy",
+   "description": "natural science studying celestial objects and phenomena in the cosmos",
    "sitelinks": {
     "uk": "Астрономія"
    }
@@ -63,8 +63,8 @@
  ],
  "series": [
   {
-   "id": "Астрономія [uk]",
-   "topic": "Астрономія",
+   "id": "Astronomy [uk]",
+   "topic": "Astronomy",
    "lang": "uk",
    "articles": [
     {
@@ -83,6 +83,14 @@
     "median_views": 611.0,
     "median_per_million": 10.169277771795077,
     "growth_pct_per_year": -50.0257519371307,
+    "growth_ci_pct_per_year": [
+     -60.30832338870351,
+     -37.18730272466363
+    ],
+    "growth_ci_pct_per_year_uncorrected": [
+     -58.68924770307191,
+     -40.91598505152366
+    ],
     "growth_pct_per_year_despiked": -51.12736856244812,
     "raw_growth_pct_per_year": -64.410316810216,
     "recent_vs_prior_pct": -45.484045135690565,
@@ -123,6 +131,7 @@
      9
     ],
     "spike_share_pct": 1.1139900033888346,
+    "zero_points": 0,
     "verdict": "declining",
     "verdict_despiked": "declining",
     "confidence": {
@@ -131,7 +140,7 @@
      "max_score": 5,
      "reasons": [
       "+ long series (24 monthly points)",
-      "+ trend statistically significant (p<0.001)",
+      "+ trend statistically significant (p<0.001; 95% CI [-60.3%; -37.2%]/yr excludes 0)",
       "+ trend, year-over-year and spike-free comparisons agree",
       "+ result holds without the 1 spike(s)",
       "~ modest volume (median 611 views/month)"

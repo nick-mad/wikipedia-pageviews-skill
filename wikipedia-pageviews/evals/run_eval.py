@@ -109,7 +109,7 @@ def run_one(ws: Path, iteration: int, ev: dict, config: str, model: str, run: in
         "\n\n---\n\n".join(f"### Turn {i + 1}\n\n{a}" for i, a in enumerate(answers)))
     (run_dir / "outputs" / "final_answer.txt").write_text(answers[-1])
     for f in sandbox.rglob("*"):
-        if f.is_file() and f.suffix in (".pdf", ".png", ".json") and ".claude" not in f.parts:
+        if f.is_file() and f.suffix in (".pdf", ".png", ".json", ".csv") and ".claude" not in f.parts:
             dest = run_dir / "outputs" / f.relative_to(sandbox).as_posix().replace("/", "__")
             shutil.copy2(f, dest)
     (run_dir / "timing.json").write_text(json.dumps({
