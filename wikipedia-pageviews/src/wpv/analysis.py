@@ -268,7 +268,7 @@ def write_csv(a: dict, path: str) -> str:
     import csv
 
     with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["period", "topic", "lang", "views", "project_views",
                     "views_per_million", "news_spike"])
         for s in a["series"]:
