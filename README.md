@@ -8,23 +8,45 @@
 Сама навичка лежить у [`wikipedia-pageviews/`](wikipedia-pageviews/), там усе: `SKILL.md`,
 код, тести, evals і [приклади](wikipedia-pageviews/examples/), згенеровані Claude Haiku 4.5.
 
-## Запуск
+## Як спробувати
 
-Потрібен тільки [`uv`](https://docs.astral.sh/uv/), Python і залежності він підтягне сам з `uv.lock`.
+Потрібні [Claude Code](https://docs.anthropic.com/en/docs/claude-code) і [`uv`](https://docs.astral.sh/uv/).
+Python і залежності `uv` підтягне сам з `uv.lock` під час першого запуску (секунд 30).
 
 ```bash
-# підключити до Claude Code
-mkdir -p ~/.claude/skills && ln -s "$PWD/wikipedia-pageviews" ~/.claude/skills/wikipedia-pageviews
+git clone https://github.com/nick-mad/wikipedia-pageviews-skill.git
+mkdir -p ~/wpv-demo/.claude/skills
+ln -s "$PWD/wikipedia-pageviews-skill/wikipedia-pageviews" ~/wpv-demo/.claude/skills/
+cd ~/wpv-demo && claude --model haiku
+```
 
-# або руками
+Так навичка підключена лише в цій папці. Щоб вона була доступна всюди, посилання можна
+покласти в `~/.claude/skills/`. Haiku я обрав навмисно, бо саме на ньому все тестувалося.
+
+Далі просто пишіть запитання. Наприклад:
+
+- *«Порівняй зростання інтересу до інтервального голодування в польськомовній та
+  чеськомовній Wikipedia за останні два роки»*. Агент знайде статті, скаже, що польської
+  немає, і дасть тренд для чеської з рівнем довіри.
+- *«Чи зростає інтерес до астрономії в україномовній Wikipedia і наскільки цьому можна
+  довіряти?»*. Тут буде тренд з довірчим інтервалом, пояснення, чому довіра саме така, і
+  вересневі сезонні піки.
+- *«Додай польську й чеську і зроби PDF-звіт для команди»*. Це продовження попереднього
+  запиту: дані, що вже є, беруться з кешу, і на виході PDF на одну сторінку.
+
+Результати (`analysis.json`, `timeseries.csv`, `chart.png`, `report.pdf`) з'являються в
+`wpv-output/` поруч із тим місцем, де запущено агента. Як це виглядає, не запускаючи нічого,
+можна подивитися в [`examples/`](wikipedia-pageviews/examples/): там відповіді, PDF і
+покрокові транскрипти Haiku.
+
+CLI можна викликати й без агента:
+
+```bash
+cd wikipedia-pageviews-skill
 wikipedia-pageviews/scripts/wpv resolve "intermittent fasting" --langs pl,cs
 wikipedia-pageviews/scripts/wpv analyze --topic "Intermittent fasting=Q1666254" --langs pl,cs
-
-# подивитися готовий приклад без мережі
-wikipedia-pageviews/scripts/wpv show wikipedia-pageviews/examples/4-chess-followup
-
-# тести (офлайн)
-cd wikipedia-pageviews && uv run pytest
+wikipedia-pageviews/scripts/wpv show wikipedia-pageviews/examples/4-chess-followup   # без мережі
+cd wikipedia-pageviews && uv run pytest                                               # тести, офлайн
 ```
 
 ## Ідея
