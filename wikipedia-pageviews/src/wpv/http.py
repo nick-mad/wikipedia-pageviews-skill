@@ -18,7 +18,7 @@ from pathlib import Path
 import requests
 
 # Wikimedia's User-Agent policy asks for a way to contact the tool's operator.
-DEFAULT_CONTACT = "https://github.com/OWNER/wikipedia-pageviews-skill"
+DEFAULT_CONTACT = "https://github.com/nick-mad/wikipedia-pageviews-skill"
 USER_AGENT = (
     "wikipedia-pageviews-skill/0.1 "
     f"(+{os.environ.get('WPV_CONTACT', DEFAULT_CONTACT)}) python-requests"
